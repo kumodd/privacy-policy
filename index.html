@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy Hub — Universal Offline AI (UOAI)</title>
+  <meta name="description" content="Privacy Policies and Google Play compliance documentation for UOAI Provider and UOAI Chat. 100% on-device AI.">
+  <style>
+    :root {
+      --bg: #090e1a;
+      --surface: #10192e;
+      --surface-border: #1e293b;
+      --card-bg: #152238;
+      --card-border: #243553;
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --text-subtle: #64748b;
+      --accent-cyan: #38bdf8;
+      --accent-emerald: #34d399;
+      --accent-indigo: #818cf8;
+      --badge-bg: rgba(56, 189, 248, 0.12);
+      --badge-border: rgba(56, 189, 248, 0.35);
+      --badge-text: #38bdf8;
+      --code-bg: #0b1322;
+      --max-width: 900px;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f8fafc;
+        --surface: #ffffff;
+        --surface-border: #e2e8f0;
+        --card-bg: #f1f5f9;
+        --card-border: #cbd5e1;
+        --text-main: #0f172a;
+        --text-muted: #475569;
+        --text-subtle: #64748b;
+        --accent-cyan: #0284c7;
+        --accent-emerald: #059669;
+        --accent-indigo: #4f46e5;
+        --badge-bg: rgba(2, 132, 199, 0.08);
+        --badge-border: rgba(2, 132, 199, 0.25);
+        --badge-text: #0284c7;
+        --code-bg: #e2e8f0;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.68;
+      padding: 40px 16px 80px 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      padding: 32px 0 40px 0;
+      border-bottom: 1px solid var(--surface-border);
+      margin-bottom: 40px;
+    }
+
+    .brand-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      color: var(--badge-text);
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      color: var(--text-main);
+      margin-bottom: 14px;
+      line-height: 1.2;
+    }
+
+    p.subtitle {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .highlight-card {
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      border-left: 4px solid var(--accent-cyan);
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin-bottom: 40px;
+    }
+
+    .highlight-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      margin-bottom: 10px;
+    }
+
+    .highlight-card p {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .policy-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .policy-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent-cyan);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .card-badge {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+    }
+
+    .badge-provider { background: var(--accent-cyan); }
+    .badge-chat { background: var(--accent-emerald); }
+
+    .card-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .card-pkg {
+      font-family: ui-monospace, monospace;
+      font-size: 0.88rem;
+      color: var(--text-subtle);
+      margin-bottom: 14px;
+    }
+
+    .card-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 22px;
+      flex-grow: 1;
+    }
+
+    .features-list {
+      list-style: none;
+      margin-bottom: 24px;
+      padding: 0;
+    }
+
+    .features-list li {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .features-list li::before {
+      content: "✓";
+      color: var(--accent-emerald);
+      font-weight: bold;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 12px 20px;
+      border-radius: 12px;
+      transition: all 0.15s ease;
+      text-align: center;
+    }
+
+    .btn:hover {
+      background: var(--badge-bg);
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+    }
+
+    .btn-emerald:hover {
+      border-color: var(--accent-emerald);
+      color: var(--accent-emerald);
+      background: rgba(52, 211, 153, 0.1);
+    }
+
+    .links-section {
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin-bottom: 40px;
+    }
+
+    .links-section h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--text-main);
+    }
+
+    .links-section ul {
+      margin-left: 20px;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .links-section li {
+      margin-bottom: 8px;
+    }
+
+    .links-section a {
+      color: var(--accent-cyan);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .links-section a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      border-top: 1px solid var(--surface-border);
+      padding-top: 28px;
+      text-align: center;
+      color: var(--text-subtle);
+      font-size: 0.88rem;
+    }
+
+    footer a {
+      color: var(--accent-cyan);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="brand-eyebrow">Universal Offline AI (UOAI) Ecosystem</div>
+      <h1>Privacy Policy Hub</h1>
+      <p class="subtitle">
+        Official privacy documentation and Google Play Console compliance disclosures for the Universal Offline AI applications.
+      </p>
+    </header>
+
+    <div class="highlight-card">
+      <h3>Core Commitment: 100% On-Device &bull; Zero Cloud &bull; Zero Tracking</h3>
+      <p>
+        The Universal Offline AI ecosystem ensures that all model loading, AI generation, and document processing happen entirely on your physical device. We operate no cloud inference servers, track no user identities, and integrate zero advertising or telemetry SDKs.
+      </p>
+    </div>
+
+    <div class="grid">
+      <!-- UOAI Provider Card -->
+      <div class="policy-card">
+        <div>
+          <div class="card-header">
+            <span class="card-badge badge-provider"></span>
+            <h2 class="card-title">UOAI Provider</h2>
+          </div>
+          <div class="card-pkg">com.uoai.provider</div>
+          <p class="card-desc">
+            Shared on-device AI inference engine for Android. Hosts local Gemma models in memory and exposes a secure loopback API (<code>127.0.0.1:8765</code>) for approved apps.
+          </p>
+          <ul class="features-list">
+            <li>Strict loopback-only network binding</li>
+            <li>Keystore-backed cryptographic tokens</li>
+            <li>Zero prompt or response logging</li>
+            <li>Fully compliant Google Play Data Safety</li>
+          </ul>
+        </div>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <a href="uoai-provider/" class="btn" style="flex: 1;">View Provider Policy</a>
+          <a href="policies/uoai-provider.html" class="btn" style="flex: 1;">Direct HTML</a>
+        </div>
+      </div>
+
+      <!-- UOAI Chat Card -->
+      <div class="policy-card">
+        <div>
+          <div class="card-header">
+            <span class="card-badge badge-chat"></span>
+            <h2 class="card-title">UOAI Chat</h2>
+          </div>
+          <div class="card-pkg">com.uoai.chat</div>
+          <p class="card-desc">
+            Private conversational AI assistant and document intelligence client. Queries UOAI Provider over loopback with 100% on-device document text extraction.
+          </p>
+          <ul class="features-list">
+            <li>Local in-memory conversation state</li>
+            <li>On-device PDF/Office file parsing</li>
+            <li>Scoped Storage Access Framework</li>
+            <li>Instant chat wipe with "New Chat"</li>
+          </ul>
+        </div>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <a href="uoai-chat/" class="btn btn-emerald" style="flex: 1;">View Chat Policy</a>
+          <a href="policies/uoai-chat.html" class="btn btn-emerald" style="flex: 1;">Direct HTML</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="links-section">
+      <h3>Policy Directory &amp; Direct Links</h3>
+      <ul>
+        <li>
+          <strong>Ecosystem Overview:</strong> <a href="privacy-policy.html">Combined Privacy Policy (All Apps)</a>
+        </li>
+        <li>
+          <strong>UOAI Provider (Dedicated):</strong> <a href="uoai-provider/">/uoai-provider/</a> or <a href="policies/uoai-provider.html">policies/uoai-provider.html</a>
+        </li>
+        <li>
+          <strong>UOAI Chat (Dedicated):</strong> <a href="uoai-chat/">/uoai-chat/</a> or <a href="policies/uoai-chat.html">policies/uoai-chat.html</a>
+        </li>
+        <li>
+          <strong>Source Repository:</strong> <a href="https://github.com/kumodd/privacy-policy" target="_blank" rel="noopener noreferrer">github.com/kumodd/privacy-policy</a>
+        </li>
+      </ul>
+    </div>
+
+    <footer>
+      <p>&copy; 2026 Universal Offline AI (UOAI). All rights reserved.</p>
+      <p style="margin-top: 6px;">Contact: <a href="mailto:support@uoai.app">support@uoai.app</a></p>
+    </footer>
+  </div>
+
+</body>
+</html>
