@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — UOAI Provider &amp; UOAI Chat</title>
+  <meta name="description" content="Privacy Policy for UOAI Provider (com.uoai.provider) and UOAI Chat (com.uoai.chat) — 100% on-device offline AI ecosystem.">
+  <style>
+    :root {
+      --bg: #090e1a;
+      --surface: #10192e;
+      --surface-border: #1e293b;
+      --card-bg: #152238;
+      --card-border: #243553;
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --text-subtle: #64748b;
+      --accent-cyan: #38bdf8;
+      --accent-emerald: #34d399;
+      --accent-indigo: #818cf8;
+      --badge-bg: rgba(56, 189, 248, 0.12);
+      --badge-border: rgba(56, 189, 248, 0.35);
+      --badge-text: #38bdf8;
+      --code-bg: #0b1322;
+      --table-border: #243553;
+      --max-width: 860px;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f8fafc;
+        --surface: #ffffff;
+        --surface-border: #e2e8f0;
+        --card-bg: #f1f5f9;
+        --card-border: #cbd5e1;
+        --text-main: #0f172a;
+        --text-muted: #475569;
+        --text-subtle: #64748b;
+        --accent-cyan: #0284c7;
+        --accent-emerald: #059669;
+        --accent-indigo: #4f46e5;
+        --badge-bg: rgba(2, 132, 199, 0.08);
+        --badge-border: rgba(2, 132, 199, 0.25);
+        --badge-text: #0284c7;
+        --code-bg: #e2e8f0;
+        --table-border: #e2e8f0;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.68;
+      padding: 32px 16px 64px 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 24px 0 32px 0;
+      border-bottom: 1px solid var(--surface-border);
+      margin-bottom: 32px;
+    }
+
+    .brand-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      color: var(--badge-text);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+
+    .meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-top: 10px;
+    }
+
+    .meta-bar span strong {
+      color: var(--text-main);
+    }
+
+    /* Quick jump pills */
+    .quick-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .quick-nav a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 12px;
+      transition: all 0.15s ease;
+    }
+
+    .quick-nav a:hover {
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+      transform: translateY(-1px);
+    }
+
+    /* Core commitment banner */
+    .highlight-card {
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      border-left: 4px solid var(--accent-emerald);
+      border-radius: 14px;
+      padding: 20px 24px;
+      margin: 28px 0;
+    }
+
+    .highlight-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--accent-emerald);
+      margin-bottom: 8px;
+    }
+
+    .highlight-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Content styling */
+    h2 {
+      font-size: 1.55rem;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      margin: 44px 0 16px 0;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--surface-border);
+      color: var(--text-main);
+      scroll-margin-top: 24px;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 24px 0 10px 0;
+      color: var(--text-main);
+    }
+
+    p {
+      margin-bottom: 14px;
+      color: var(--text-muted);
+      font-size: 0.98rem;
+    }
+
+    ul, ol {
+      margin: 10px 0 18px 22px;
+      color: var(--text-muted);
+      font-size: 0.98rem;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    li strong {
+      color: var(--text-main);
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.88em;
+      background: var(--code-bg);
+      border: 1px solid var(--surface-border);
+      padding: 2px 6px;
+      border-radius: 6px;
+      color: var(--accent-cyan);
+    }
+
+    /* App info cards */
+    .app-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin: 20px 0 28px 0;
+    }
+
+    .app-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 18px;
+    }
+
+    .app-card-title {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .app-card-title .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .app-card-title .dot-provider { background: var(--accent-cyan); }
+    .app-card-title .dot-chat { background: var(--accent-emerald); }
+
+    .app-card-pkg {
+      font-size: 0.84rem;
+      color: var(--text-subtle);
+      font-family: ui-monospace, monospace;
+      margin-bottom: 10px;
+    }
+
+    .app-card p {
+      font-size: 0.9rem;
+      margin-bottom: 0;
+    }
+
+    /* Tables */
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 18px 0 24px 0;
+      border: 1px solid var(--table-border);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.92rem;
+    }
+
+    th {
+      background: var(--card-bg);
+      color: var(--text-main);
+      font-weight: 600;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--table-border);
+    }
+
+    td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--table-border);
+      color: var(--text-muted);
+      vertical-align: top;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    td strong {
+      color: var(--text-main);
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 56px;
+      padding-top: 24px;
+      border-top: 1px solid var(--surface-border);
+      font-size: 0.88rem;
+      color: var(--text-subtle);
+      text-align: center;
+    }
+
+    footer a {
+      color: var(--accent-cyan);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="brand-eyebrow">Universal Offline AI (UOAI) Ecosystem</div>
+      <h1>Privacy Policy</h1>
+      <p style="font-size: 1.05rem; color: var(--text-muted);">
+        Comprehensive Privacy Policy for <strong>UOAI Provider</strong> and <strong>UOAI Chat</strong> for Google Play Store listing and user verification.
+      </p>
+      <div class="meta-bar">
+        <span><strong>Effective Date:</strong> November 21, 2026</span>
+        <span><strong>Last Updated:</strong> November 21, 2026</span>
+        <span><strong>Developer:</strong> UOAI Project Team</span>
+      </div>
+
+      <nav class="quick-nav" aria-label="Jump to section">
+        <a href="#summary">Key Commitments</a>
+        <a href="#apps-covered">Apps Covered</a>
+        <a href="#provider">UOAI Provider Policy</a>
+        <a href="#chat">UOAI Chat Policy</a>
+        <a href="#permissions">Permissions Usage</a>
+        <a href="#data-safety">Google Play Data Safety</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Core Summary -->
+      <section id="summary">
+        <div class="highlight-card">
+          <h3>100% On-Device &bull; Zero Cloud &bull; Zero Tracking &bull; Zero Accounts</h3>
+          <p>
+            The Universal Offline AI (UOAI) ecosystem was designed from the ground up on a strict privacy-first principle: <strong>your data, prompts, documents, and conversations never leave your physical device</strong>. We run open-source large language models (such as Gemma) locally on your device's hardware (CPU, GPU, NPU) through an on-device loopback server. We do not operate remote inference servers, we do not require account logins, and we do not bundle any analytics or advertising SDKs.
+          </p>
+        </div>
+      </section>
+
+      <!-- Apps Covered -->
+      <section id="apps-covered">
+        <h2>1. Applications Covered by This Policy</h2>
+        <p>This privacy policy applies to the following two independently published applications available on Google Play:</p>
+
+        <div class="app-grid">
+          <div class="app-card">
+            <div class="app-card-title">
+              <span class="dot dot-provider"></span>
+              UOAI Provider
+            </div>
+            <div class="app-card-pkg">com.uoai.provider</div>
+            <p>
+              Acts as the local, shared on-device inference hub. Hosts local Gemma models and exposes an authenticated loopback HTTP/SSE server strictly on <code>127.0.0.1:8765</code> for approved Android client applications.
+            </p>
+          </div>
+
+          <div class="app-card">
+            <div class="app-card-title">
+              <span class="dot dot-chat"></span>
+              UOAI Chat
+            </div>
+            <div class="app-card-pkg">com.uoai.chat</div>
+            <p>
+              A standalone conversational client application. Connects to UOAI Provider over loopback, extracts text locally from user-selected PDFs, documents, or code, and displays private streaming answers.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- UOAI Provider Specifics -->
+      <section id="provider">
+        <h2>2. UOAI Provider Privacy Details</h2>
+
+        <h3>2.1 What UOAI Provider Stores Locally</h3>
+        <ul>
+          <li>
+            <strong>Downloaded AI Model Files:</strong> Local GGUF, LiteRT-LM (<code>.litertlm</code>), or MediaPipe (<code>.task</code>) model files stored in private app storage. These files are downloaded directly from open-source repositories (such as Hugging Face) over direct HTTPS connections initiated by the user, or imported from your local storage.
+          </li>
+          <li>
+            <strong>Approved Client App Registrations:</strong> The package name and SHA-256 signing certificate fingerprint of client apps you explicitly authorize via Android OS Activity results.
+          </li>
+          <li>
+            <strong>Cryptographic Access Tokens:</strong> Locally generated tokens stored in the secure Android Keystore, used solely to authenticate loopback requests from approved apps on the same device.
+          </li>
+          <li>
+            <strong>Inference Audit Trail (Metadata Only):</strong> Optional local logs showing timestamps, caller package IDs, token counts, and latency. <em>Prompt content and response text are never recorded or stored in audit logs.</em>
+          </li>
+        </ul>
+
+        <h3>2.2 Loopback-Only Network Architecture</h3>
+        <p>
+          The embedded HTTP/SSE server (powered by Ktor CIO) binds <strong>strictly to <code>127.0.0.1:8765</code></strong> (loopback interface). It is never bound to <code>0.0.0.0</code>, never listens on Wi-Fi or cellular interfaces, and cannot be accessed by external computers, servers, or devices on your local network.
+        </p>
+      </section>
+
+      <!-- UOAI Chat Specifics -->
+      <section id="chat">
+        <h2>3. UOAI Chat Privacy Details</h2>
+
+        <h3>3.1 Chat History &amp; Conversations</h3>
+        <p>
+          All conversation messages, turns, and assistant outputs are kept strictly in local memory and private app state. We do not upload your chat sessions to any cloud server, database, or telemetry platform. Clearing the chat within the app permanently frees the conversational memory.
+        </p>
+
+        <h3>3.2 Local Document &amp; File Attachments</h3>
+        <p>
+          UOAI Chat allows users to attach PDFs, Office files (Word, Excel, PowerPoint), text documents, and code files to provide context to the local AI.
+        </p>
+        <ul>
+          <li>
+            <strong>On-Device Extraction:</strong> All file reading and text extraction (using PDFBox-Android and built-in UTF-8 readers) occurs 100% locally on your phone.
+          </li>
+          <li>
+            <strong>No Cloud Transmission:</strong> Neither your original files nor the extracted text are uploaded to any external server.
+          </li>
+          <li>
+            <strong>Scoping &amp; Ephemeral Handling:</strong> Files are accessed only via the standard Android Storage Access Framework (SAF) system picker upon your direct user interaction. Once the message turn completes or the chat is cleared, attachment contents are discarded.
+          </li>
+        </ul>
+      </section>
+
+      <!-- Device Permissions -->
+      <section id="permissions">
+        <h2>4. Device Permissions &amp; Why They Are Needed</h2>
+        <p>We request only the minimum set of permissions necessary for offline functionality:</p>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Permission</th>
+                <th>App</th>
+                <th>Justification &amp; Privacy Boundary</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>INTERNET</code></td>
+                <td>Both</td>
+                <td>
+                  <strong>Loopback Communication:</strong> Android requires this permission for apps to open TCP sockets to <code>127.0.0.1</code> (loopback) to communicate between UOAI Chat (or other client apps) and UOAI Provider. In UOAI Provider, it is also used for user-initiated direct model downloads from public model repositories (e.g. Hugging Face). No personal data or prompts are transmitted over the internet.
+                </td>
+              </tr>
+              <tr>
+                <td><code>FOREGROUND_SERVICE</code> &amp;<br><code>FOREGROUND_SERVICE_SPECIAL_USE</code></td>
+                <td>UOAI Provider</td>
+                <td>
+                  <strong>Persistent Local AI Server:</strong> Keeps the local AI model loaded in memory and the loopback HTTP server active when the user explicitly taps "Start API", allowing other apps (like UOAI Chat) to send inference prompts while UOAI Provider is in the background. A permanent status notification is displayed with a one-tap "Stop API" action.
+                </td>
+              </tr>
+              <tr>
+                <td><code>POST_NOTIFICATIONS</code></td>
+                <td>UOAI Provider</td>
+                <td>
+                  <strong>Status Notification:</strong> Required on Android 13 (API 33) and above to display the ongoing foreground service notification showing server state and the "Stop" button.
+                </td>
+              </tr>
+              <tr>
+                <td>Storage Access Framework (SAF)</td>
+                <td>UOAI Chat</td>
+                <td>
+                  <strong>User-Selected Documents:</strong> Uses standard system picker contracts (<code>OpenMultipleDocuments</code>). The app does <em>not</em> request broad storage permissions (<code>READ_EXTERNAL_STORAGE</code> or <code>MANAGE_EXTERNAL_STORAGE</code>). It only reads the specific files you tap to attach.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Third-Party Sharing & Telemetry -->
+      <section id="third-party">
+        <h2>5. Third-Party Sharing, Telemetry &amp; Advertising</h2>
+        <ul>
+          <li><strong>Zero Advertising SDKs:</strong> There are no advertisements in UOAI Provider or UOAI Chat.</li>
+          <li><strong>Zero Analytics / Telemetry SDKs:</strong> We do not integrate Firebase Analytics, Google Analytics, Mixpanel, Segment, Flurry, or any other tracking SDK.</li>
+          <li><strong>Zero Crash Telemetry SDKs:</strong> We do not integrate third-party crash trackers (like Sentry or Crashlytics). Crash diagnostics stay within the standard Android OS bug report mechanisms.</li>
+          <li><strong>Zero User Profiling:</strong> We do not build user profiles, track device identifiers (IMEI, Advertising ID, MAC address), or sell personal information.</li>
+        </ul>
+      </section>
+
+      <!-- Google Play Data Safety Questionnaire -->
+      <section id="data-safety">
+        <h2>6. Google Play Data Safety Compliance</h2>
+        <p>For transparency and direct alignment with the Google Play Console Data Safety questionnaire for both apps:</p>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Questionnaire Field</th>
+                <th>Declared Value</th>
+                <th>Detailed Explanation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Does your app collect or share any user data?</td>
+                <td><strong>No</strong></td>
+                <td>All processing is strictly on-device. No user data leaves the phone.</td>
+              </tr>
+              <tr>
+                <td>Is user data transferred over an external network?</td>
+                <td><strong>No</strong></td>
+                <td>Networking is confined strictly to loopback (<code>127.0.0.1</code>) inter-process communication.</td>
+              </tr>
+              <tr>
+                <td>Do you provide a way for users to request data deletion?</td>
+                <td><strong>Yes (Direct User Control)</strong></td>
+                <td>Users can clear all locally stored data, tokens, and model files instantly via Android Settings &rarr; Apps &rarr; Storage &rarr; Clear Data, or by uninstalling the application.</td>
+              </tr>
+              <tr>
+                <td>Is the data encrypted in transit?</td>
+                <td><strong>N/A (Loopback)</strong></td>
+                <td>Inter-app calls are routed strictly in-kernel on the loopback interface on the physical device.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Children's Privacy -->
+      <section id="children">
+        <h2>7. Children's Privacy</h2>
+        <p>
+          Our applications do not collect, transmit, or store personal information from anyone, including children under the age of 13. Because all processing is offline and on-device, our applications comply fully with the Children’s Online Privacy Protection Act (COPPA) and the General Data Protection Regulation (GDPR).
+        </p>
+      </section>
+
+      <!-- Data Retention & Deletion -->
+      <section id="retention">
+        <h2>8. Data Retention &amp; How to Delete Your Data</h2>
+        <p>
+          Because all data is stored exclusively in your device's private application sandbox:
+        </p>
+        <ol>
+          <li><strong>In-App Chat Clear:</strong> Tapping the "New Chat" icon in UOAI Chat immediately discards the current session and in-memory conversation history.</li>
+          <li><strong>Revoking Client Access:</strong> In UOAI Provider, you can revoke any approved client application at any time in the <em>Clients</em> tab.</li>
+          <li><strong>Full Data Wipe:</strong> You can wipe all downloaded models, credentials, tokens, and settings at any time by going to your phone's <strong>Settings &rarr; Apps &rarr; UOAI Provider (or UOAI Chat) &rarr; Storage &rarr; Clear Storage / Clear Data</strong>.</li>
+          <li><strong>Uninstallation:</strong> Uninstalling the application automatically and permanently purges all associated private storage from your device.</li>
+        </ol>
+      </section>
+
+      <!-- Changes to Policy -->
+      <section id="updates">
+        <h2>9. Changes to This Privacy Policy</h2>
+        <p>
+          We may update this Privacy Policy from time to time to reflect app updates or regulatory requirements. Any updates will be published to this URL with a revised "Last Updated" date.
+        </p>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact">
+        <h2>10. Contact Us</h2>
+        <p>
+          If you have any questions, feedback, or concerns regarding this Privacy Policy or our offline AI applications, please contact us:
+        </p>
+        <ul>
+          <li><strong>Project:</strong> Universal Offline AI (UOAI)</li>
+          <li><strong>Email:</strong> <a href="mailto:privacy@uoai.local" style="color: var(--accent-cyan);">support@uoai.app</a></li>
+          <li><strong>GitHub Repository:</strong> <a href="https://github.com" target="_blank" rel="noopener noreferrer" style="color: var(--accent-cyan);">UOAI Open Source Project</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Universal Offline AI (UOAI). All rights reserved.</p>
+      <p style="margin-top: 6px;">100% on-device AI &bull; No cloud &bull; No telemetry</p>
+    </footer>
+  </div>
+
+</body>
+</html>
