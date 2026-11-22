@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Implementation Prompt — Integrate UOAI Provider (com.uoai.provider)</title>
+  <meta name="description" content="Copy-paste AI coding assistant prompt to integrate Universal Offline AI Provider (com.uoai.provider) into any existing Android app.">
+  <style>
+    :root {
+      --bg: #090e1a;
+      --surface: #10192e;
+      --surface-border: #1e293b;
+      --card-bg: #152238;
+      --card-border: #243553;
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --text-subtle: #64748b;
+      --accent-cyan: #38bdf8;
+      --accent-emerald: #34d399;
+      --accent-indigo: #818cf8;
+      --badge-bg: rgba(52, 211, 153, 0.12);
+      --badge-border: rgba(52, 211, 153, 0.35);
+      --badge-text: #34d399;
+      --code-bg: #0b1322;
+      --max-width: 940px;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f8fafc;
+        --surface: #ffffff;
+        --surface-border: #e2e8f0;
+        --card-bg: #f1f5f9;
+        --card-border: #cbd5e1;
+        --text-main: #0f172a;
+        --text-muted: #475569;
+        --text-subtle: #64748b;
+        --accent-cyan: #0284c7;
+        --accent-emerald: #059669;
+        --accent-indigo: #4f46e5;
+        --badge-bg: rgba(5, 150, 105, 0.08);
+        --badge-border: rgba(5, 150, 105, 0.25);
+        --badge-text: #059669;
+        --code-bg: #f1f5f9;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.68;
+      padding: 32px 16px 72px 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .back-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .back-link:hover {
+      color: var(--accent-cyan);
+    }
+
+    .guide-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 0.86rem;
+      font-weight: 600;
+      padding: 7px 14px;
+      border-radius: 9999px;
+    }
+
+    .guide-link:hover {
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+    }
+
+    header {
+      padding: 20px 0 28px 0;
+      border-bottom: 1px solid var(--surface-border);
+      margin-bottom: 28px;
+    }
+
+    .brand-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      color: var(--badge-text);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+      margin-bottom: 10px;
+      line-height: 1.22;
+    }
+
+    p {
+      margin-bottom: 14px;
+      color: var(--text-muted);
+      font-size: 0.96rem;
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.86em;
+      background: var(--code-bg);
+      border: 1px solid var(--surface-border);
+      padding: 2px 6px;
+      border-radius: 6px;
+      color: var(--accent-cyan);
+    }
+
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .tab-btn {
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 10px 18px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .tab-btn:hover {
+      border-color: var(--accent-cyan);
+      color: var(--text-main);
+    }
+
+    .tab-btn.active {
+      background: rgba(56, 189, 248, 0.14);
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+    }
+
+    .prompt-panel {
+      display: none;
+    }
+
+    .prompt-panel.active {
+      display: block;
+    }
+
+    .prompt-card {
+      background: var(--code-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 28px;
+    }
+
+    .prompt-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 14px 18px;
+      background: var(--card-bg);
+      border-bottom: 1px solid var(--surface-border);
+    }
+
+    .prompt-meta {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .prompt-sub {
+      font-size: 0.8rem;
+      color: var(--text-subtle);
+      font-weight: 500;
+      margin-top: 2px;
+    }
+
+    .copy-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent-emerald);
+      color: #04130d;
+      border: none;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 10px 18px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: opacity 0.15s ease, transform 0.15s ease;
+    }
+
+    .copy-primary:hover {
+      opacity: 0.92;
+      transform: translateY(-1px);
+    }
+
+    .copy-primary.copied {
+      background: var(--accent-cyan);
+    }
+
+    pre {
+      padding: 20px;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.86rem;
+      line-height: 1.6;
+      color: var(--text-main);
+    }
+
+    .tips-box {
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      border-left: 4px solid var(--accent-indigo);
+      border-radius: 14px;
+      padding: 20px 24px;
+      margin-bottom: 32px;
+    }
+
+    .tips-box h3 {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--accent-indigo);
+      margin-bottom: 10px;
+    }
+
+    .tips-box ul {
+      margin-left: 20px;
+      color: var(--text-muted);
+      font-size: 0.94rem;
+    }
+
+    .tips-box li {
+      margin-bottom: 6px;
+    }
+
+    footer {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--surface-border);
+      font-size: 0.88rem;
+      color: var(--text-subtle);
+      text-align: center;
+    }
+
+    footer a {
+      color: var(--accent-cyan);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="top-bar">
+      <a href="../index.html" class="back-link">&larr; Back to UOAI Hub</a>
+      <a href="../developer-guide/" class="guide-link">Read Full Developer Guide &rarr;</a>
+    </div>
+
+    <header>
+      <div class="brand-eyebrow">AI Coding Assistant Prompt &bull; Cursor / Claude / Antigravity / Gemini</div>
+      <h1>AI Prompt to Integrate UOAI Provider</h1>
+      <p style="font-size: 1.05rem;">
+        Paste one of these self-contained prompts into your AI coding assistant inside your <strong>existing Android app</strong> to add 100% offline on-device Gemma 3 / Gemma 4 inference via <code>com.uoai.provider</code>—without bundling model weights.
+      </p>
+    </header>
+
+    <div class="tips-box">
+      <h3>How to Use</h3>
+      <ul>
+        <li>Pick <strong>Path A (Kotlin SDK)</strong> if you have <code>sdk-release.aar</code> in <code>app/libs/</code> (recommended for Kotlin / Jetpack Compose / Views apps).</li>
+        <li>Pick <strong>Path B (Direct HTTP/SSE)</strong> if you want zero AAR dependencies, or are integrating into Java, OkHttp, Ktor, Flutter, or React Native.</li>
+        <li>Fill in the short <code>[YOUR FEATURE GOAL]</code> line at the top of the prompt (e.g., "Add an offline AI summarize button to NoteDetailScreen") before sending.</li>
+      </ul>
+    </div>
+
+    <div class="tabs" role="tablist">
+      <button class="tab-btn active" onclick="switchTab('path-a', this)">Path A: Kotlin SDK (sdk-release.aar)</button>
+      <button class="tab-btn" onclick="switchTab('path-b', this)">Path B: Direct HTTP/SSE (No AAR)</button>
+    </div>
+
+    <!-- PATH A PROMPT -->
+    <div id="panel-path-a" class="prompt-panel active">
+      <div class="prompt-card">
+        <div class="prompt-toolbar">
+          <div>
+            <div class="prompt-meta">Prompt — Path A: Kotlin SDK Integration (<code>sdk-release.aar</code>)</div>
+            <div class="prompt-sub">Best for existing Kotlin Android apps (Compose or XML Views, minSdk &ge; 26)</div>
+          </div>
+          <button class="copy-primary" onclick="copyPrompt('prompt-path-a', this)">Copy Prompt</button>
+        </div>
+        <pre id="prompt-path-a">You are integrating **Universal Offline AI Provider (`com.uoai.provider`)** into my existing Android app so it can run 100% offline, on-device Gemma 3 / Gemma 4 LLM inference over localhost loopback (`http://127.0.0.1:8765/v1`) without bundling any model weights or inference runtime.
+
+### My Feature Goal
+[DESCRIBE WHERE AND HOW YOU WANT OFFLINE AI IN YOUR APP — e.g. "Add an offline AI assistant / summarize action in `MainActivity` or `NoteDetailScreen` with streaming output and a Stop button."]
+
+### Step 1: Inspect My Existing Project First
+Before editing any files, inspect:
+1. `app/build.gradle.kts` (or `build.gradle`) for `minSdk` (must be >= 26), Java/Kotlin target (17), existing `kotlinx-coroutines-android`, `kotlinx-serialization-json`, `applicationId`, and `buildTypes.debug.applicationIdSuffix`.
+2. `AndroidManifest.xml` for any existing `android:networkSecurityConfig`.
+3. `app/libs/sdk-release.aar` (verify it exists; if missing, tell me where to drop it and still wire the code cleanly).
+4. My existing architecture (Compose vs. XML Views, ViewModel / DI setup, Activity/Fragment lifecycle).
+
+### Step 2: Gradle &amp; Manifest Configuration (Path A — Kotlin SDK)
+1. In `app/build.gradle.kts`, add:
+   - `implementation(files("libs/sdk-release.aar"))`
+   - `implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.11.0")` (or keep compatible existing version)
+   - `implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.8.1")` (or keep compatible existing version)
+2. Ensure `debug` and `release` have distinct `applicationId` values so switching builds on a device never triggers `certificate_mismatch`:
+   ```kotlin
+   buildTypes {
+       debug {
+           applicationIdSuffix = ".debug"
+       }
+   }
+   ```
+3. Manifest &amp; ProGuard:
+   - `sdk-release.aar` automatically merges `INTERNET`, `&lt;queries&gt;&lt;package android:name="com.uoai.provider" /&gt;&lt;/queries&gt;`, loopback-only `networkSecurityConfig`, and R8 `consumer-rules.pro`.
+   - ONLY if my app ALREADY defines `android:networkSecurityConfig`, add `tools:replace="android:networkSecurityConfig"` on `&lt;application&gt;` and add:
+     ```xml
+     &lt;domain-config cleartextTrafficPermitted="true"&gt;
+         &lt;domain includeSubdomains="false"&gt;127.0.0.1&lt;/domain&gt;
+         &lt;domain includeSubdomains="false"&gt;localhost&lt;/domain&gt;
+     &lt;/domain-config&gt;
+     ```
+     Never enable global `usesCleartextTraffic="true"`.
+
+### Step 3: Implement Provider Connection, Registration &amp; Streaming
+Use `com.uoai.sdk.UniversalAIClient` with default `ClientConfig(model = "auto")` (never hardcode a model ID).
+
+Key SDK symbols to use:
+- `val ai = UniversalAIClient(applicationContext)`
+- `suspend fun checkConnection(): ConnectionState` returning:
+  - `ConnectionState.ProviderNotInstalled` -&gt; show prompt to install `com.uoai.provider`
+  - `ConnectionState.NeedsRegistration(registrationIntent)` -&gt; launch via `ActivityResultContracts.StartActivityForResult()` (NEVER add `FLAG_ACTIVITY_NEW_TASK` or OS caller verification fails)
+  - `ConnectionState.ProviderNotRunning(launchProviderIntent)` -&gt; show one-tap "Open Provider &amp; Start API" button (`launchProviderIntent?.let(::startActivity)`)
+  - `ConnectionState.ModelNotReady(modelState, launchProviderIntent)` -&gt; show one-tap "Open Provider &amp; Load Model" button
+  - `ConnectionState.Connected(activeModel, capabilities)` -&gt; ready for inference (respect `capabilities.contextWindowTokens` up to 32,768)
+  - `ConnectionState.Error(message)` -&gt; show error + Retry button
+- `ai.handleRegistrationResult(resultCode, data)` -&gt; returns `RegistrationResult.Approved` or `RegistrationResult.Denied(code, message)`. On `Approved`, call `checkConnection()` again.
+- Re-run `checkConnection()` on `Lifecycle.Event.ON_RESUME` so returning from the Provider app auto-connects immediately.
+- For multi-turn chat, use `ai.startChat(systemPrompt = ...)` with `session.sendStream(prompt)` (returns `Flow&lt;String&gt;`).
+- For one-shot generation, use `ai.generateStream(...)` or `ai.generate(...)`.
+- Provide a **Stop / Cancel** button that cancels the coroutine `Job` (the SDK automatically calls `POST /v1/cancel`).
+- Handle exceptions cleanly:
+  - `CancellationException` / `RequestCancelledException` -&gt; stop cleanly
+  - `NotRegisteredException` -&gt; call `ai.clearCredentials()` and re-run `checkConnection()`
+  - `PermissionDeniedException` -&gt; tell user to enable `chat` / `streaming` / `tool_calling` in Provider -&gt; Clients
+  - `ProviderNotRunningException` / `ModelNotReadyException` / `UniversalAIException` -&gt; show error notice and re-run `checkConnection()` for one-tap recovery (Provider's foreground service is intentionally non-sticky).
+
+### Step 4: Optional Tool Calling Rules (Only if Needed)
+- Tool calling (`tools` or `useProviderTools = true`) requires `stream = false` and `toolCalling` permission in Provider.
+- Provider tools available: `calculator`, `device_info`.
+- Out of scope for Provider: embeddings (`embeddings = false`), STT/audio, and vision inputs (handle those locally in my app before calling chat completions).
+
+### Step 5: Verify Before Finishing
+1. Run a Gradle compile check (`./gradlew assembleDebug`).
+2. Confirm no `.task`, `.litertlm`, or `.bin` model weights were added to the project.
+3. Summarize every file created/modified and any manual step needed (like placing `sdk-release.aar` in `app/libs/` if not already present).</pre>
+      </div>
+    </div>
+
+    <!-- PATH B PROMPT -->
+    <div id="panel-path-b" class="prompt-panel">
+      <div class="prompt-card">
+        <div class="prompt-toolbar">
+          <div>
+            <div class="prompt-meta">Prompt — Path B: Direct HTTP/SSE Integration (Zero AAR)</div>
+            <div class="prompt-sub">Best for OkHttp/Ktor custom stacks, Java apps, Flutter MethodChannel, or React Native native modules</div>
+          </div>
+          <button class="copy-primary" onclick="copyPrompt('prompt-path-b', this)">Copy Prompt</button>
+        </div>
+        <pre id="prompt-path-b">You are integrating **Universal Offline AI Provider (`com.uoai.provider`)** into my existing Android app using **Path B (Direct Loopback HTTP/SSE)** with zero AAR dependency, so my app can run 100% offline on-device Gemma 3 / Gemma 4 LLM inference via `http://127.0.0.1:8765/v1`.
+
+### My Feature Goal
+[DESCRIBE WHERE AND HOW YOU WANT OFFLINE AI IN YOUR APP — e.g. "Add an offline AI chat/summarize service using OkHttp with SSE streaming and cancellation."]
+
+### Step 1: Inspect My Existing Project First
+Inspect my existing project's Gradle setup, HTTP client (OkHttp / Ktor / HttpURLConnection), `AndroidManifest.xml`, `applicationId` / `debug` suffix, secure storage mechanism, and UI layer (Compose, XML, Flutter MethodChannel, or React Native module).
+
+### Step 2: Android Manifest, Loopback Security &amp; Signing Config
+1. In `AndroidManifest.xml`, ensure:
+   - `&lt;uses-permission android:name="android.permission.INTERNET" /&gt;`
+   - `&lt;queries&gt;&lt;package android:name="com.uoai.provider" /&gt;&lt;/queries&gt;` (mandatory on Android 11+ / API 30+)
+   - `android:networkSecurityConfig="@xml/network_security_config"` on `&lt;application&gt;`
+2. Create or update `res/xml/network_security_config.xml` to allow cleartext ONLY on loopback (never set global `usesCleartextTraffic="true"`):
+   ```xml
+   &lt;?xml version="1.0" encoding="utf-8"?&gt;
+   &lt;network-security-config&gt;
+       &lt;domain-config cleartextTrafficPermitted="true"&gt;
+           &lt;domain includeSubdomains="false"&gt;127.0.0.1&lt;/domain&gt;
+           &lt;domain includeSubdomains="false"&gt;localhost&lt;/domain&gt;
+       &lt;/domain-config&gt;
+   &lt;/network-security-config&gt;
+   ```
+3. In `app/build.gradle.kts`, add `applicationIdSuffix = ".debug"` under `buildTypes.debug` so debug and release builds never collide on SHA-256 certificate pinning (`certificate_mismatch`).
+
+### Step 3: Registration Intent &amp; Secure Token Storage
+1. Check if `com.uoai.provider` is installed via `PackageManager.getPackageInfo("com.uoai.provider", 0)`.
+2. Launch registration with `startActivityForResult` / `ActivityResultContracts.StartActivityForResult()`:
+   ```kotlin
+   val intent = Intent("com.uoai.provider.action.REGISTER").setPackage("com.uoai.provider")
+   ```
+   **CRITICAL:** Never add `FLAG_ACTIVITY_NEW_TASK` to this Intent, or Android clears the OS caller identity and registration fails with `no_caller`.
+3. Handle result:
+   - `Activity.RESULT_OK`: read extras `token` (`"uoai_..."`) and `client_id`. Store `token` encrypted using Android Keystore (AES/GCM/NoPadding) or `EncryptedSharedPreferences`.
+   - `Activity.RESULT_CANCELED`: read `error_code` (`no_caller`, `identity`, `certificate_mismatch`, `disabled`, `rejected`, `cancelled`) and `error`.
+
+### Step 4: Implement Loopback HTTP/SSE Client (`http://127.0.0.1:8765/v1`)
+Configure HTTP timeouts: `connectTimeout = 3s`, `readTimeout = 300s` (generation timeout is `300,000 ms`).
+Include header `Authorization: Bearer &lt;token&gt;` on every `/v1/*` call except `/v1/health`.
+
+Implement these endpoints:
+1. `GET /v1/health` (unauthenticated):
+   - Response: `{ "status": "ok"|"degraded", "model_state": "READY"|..., "model_loaded": true|false, "api_version": "v1", "model_error"?: "..." }`
+   - If socket connection is refused, Provider's non-sticky foreground service is stopped -&gt; show a one-tap "Open Provider" recovery button (`packageManager.getLaunchIntentForPackage("com.uoai.provider")`) and re-check on `ON_RESUME`.
+2. `GET /v1/capabilities` (authenticated):
+   - Read `context_window_tokens` (up to `32768`), `default_max_tokens`, `max_tokens_limit`, `max_request_bytes` (`2097152`), `provider_tools` (`["calculator", "device_info"]`).
+   - Keep request payload under `2 MiB` and `prompt_tokens + max_tokens &lt;= context_window_tokens`.
+3. `GET /v1/models` (authenticated): optional model inspection.
+4. `POST /v1/chat/completions` (authenticated):
+   - Body:
+     ```json
+     {
+       "model": "auto",
+       "messages": [
+         {"role": "system", "content": "..."},
+         {"role": "user", "content": "..."}
+       ],
+       "temperature": 0.7,
+       "max_tokens": 2048,
+       "stream": true
+     }
+     ```
+   - Always pass `"model": "auto"` so it works across Gemma 3 and all Gemma 4 tiers.
+   - Read `X-Request-Id` response header immediately (`chatcmpl-&lt;uuid&gt;`) and keep it for cancellation.
+   - For `stream: true` (send header `Accept: text/event-stream`):
+     - Read line by line; skip blank lines and lines not starting with `data:`.
+     - Strip `data:` prefix and trim. Stop on `[DONE]`.
+     - Parse JSON: if `"error"` key exists, abort and surface error; otherwise append `choices[0].delta.content` and handle `finish_reason == "cancelled"`.
+   - For `stream: false`: parse `choices[0].message.content` (and `message.tool_calls` if using `tools`).
+5. `POST /v1/cancel` (authenticated):
+   - Body: `{ "request_id": "&lt;X-Request-Id&gt;" }`
+   - Call this whenever the user taps Stop or leaves the screen mid-stream.
+
+### Step 5: Error Code Handling
+All non-2xx errors return `{"error":{"message":"...","type":"...","code":"..."}}`:
+- `401` (`missing_token` / `invalid_token`): clear stored token and trigger re-registration.
+- `403` (`permission_denied`): instruct user to enable `chat`, `streaming`, or `tool_calling` in Provider -&gt; Clients.
+- `404` (`model_not_found`): fallback to `"model": "auto"`.
+- `409` (`request_cancelled`): clean user abort.
+- `413` (`request_too_large`): trim history below 2 MiB.
+- `429` (`queue_full`): queue limit hit (16 global / 4 per client) -&gt; brief backoff &amp; retry.
+- `503` (`model_not_ready`): show "Open Provider &amp; Load Model" button.
+- `504` (`request_timeout`): exceeded 300 s -&gt; suggest shorter prompt / lower `max_tokens`.
+
+### Step 6: Verify Before Finishing
+1. Build the project (`./gradlew assembleDebug`) and fix any compile/lint errors.
+2. Confirm no `.task`, `.litertlm`, or `.bin` weights exist in the app.
+3. Summarize the files changed and how to test via `adb forward tcp:8765 tcp:8765`.</pre>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2026 Universal Offline AI (UOAI). All rights reserved.</p>
+      <p style="margin-top: 6px;">
+        <a href="../index.html">UOAI Hub</a> &bull;
+        <a href="../developer-guide/">Developer Guide</a> &bull;
+        <a href="../uoai-provider/">UOAI Provider Policy</a> &bull;
+        <a href="../uoai-chat/">UOAI Chat Policy</a>
+      </p>
+    </footer>
+  </div>
+
+  <script>
+    function switchTab(id, btn) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.prompt-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('panel-' + id).classList.add('active');
+    }
+
+    function copyPrompt(preId, btn) {
+      const text = document.getElementById(preId).innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        const orig = btn.textContent;
+        btn.textContent = 'Copied to Clipboard!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.textContent = orig;
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Developer Integration Guide — Universal Offline AI Provider (com.uoai.provider)</title>
+  <meta name="description" content="External Developer Integration Guide for Universal Offline AI Provider (com.uoai.provider) — integrate 100% offline Gemma 3 / Gemma 4 LLM inference into any Android app.">
+  <style>
+    :root {
+      --bg: #090e1a;
+      --surface: #10192e;
+      --surface-border: #1e293b;
+      --card-bg: #152238;
+      --card-border: #243553;
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --text-subtle: #64748b;
+      --accent-cyan: #38bdf8;
+      --accent-emerald: #34d399;
+      --accent-indigo: #818cf8;
+      --accent-amber: #fbbf24;
+      --badge-bg: rgba(129, 140, 248, 0.14);
+      --badge-border: rgba(129, 140, 248, 0.38);
+      --badge-text: #818cf8;
+      --code-bg: #0b1322;
+      --table-border: #243553;
+      --max-width: 940px;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f8fafc;
+        --surface: #ffffff;
+        --surface-border: #e2e8f0;
+        --card-bg: #f1f5f9;
+        --card-border: #cbd5e1;
+        --text-main: #0f172a;
+        --text-muted: #475569;
+        --text-subtle: #64748b;
+        --accent-cyan: #0284c7;
+        --accent-emerald: #059669;
+        --accent-indigo: #4f46e5;
+        --accent-amber: #d97706;
+        --badge-bg: rgba(79, 70, 229, 0.08);
+        --badge-border: rgba(79, 70, 229, 0.25);
+        --badge-text: #4f46e5;
+        --code-bg: #f1f5f9;
+        --table-border: #e2e8f0;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.68;
+      padding: 32px 16px 72px 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .back-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .back-link:hover {
+      color: var(--accent-cyan);
+    }
+
+    .cta-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, rgba(129, 140, 248, 0.18), rgba(56, 189, 248, 0.18));
+      border: 1px solid var(--accent-indigo);
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 8px 16px;
+      border-radius: 9999px;
+      transition: transform 0.15s ease, border-color 0.15s ease;
+    }
+
+    .cta-pill:hover {
+      transform: translateY(-1px);
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+    }
+
+    header {
+      padding: 20px 0 32px 0;
+      border-bottom: 1px solid var(--surface-border);
+      margin-bottom: 32px;
+    }
+
+    .brand-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      color: var(--badge-text);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+      margin-bottom: 12px;
+      line-height: 1.22;
+    }
+
+    .meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-top: 12px;
+    }
+
+    .meta-bar span strong {
+      color: var(--text-main);
+    }
+
+    .quick-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 22px;
+    }
+
+    .quick-nav a {
+      display: inline-flex;
+      align-items: center;
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 7px 14px;
+      border-radius: 10px;
+      transition: all 0.15s ease;
+    }
+
+    .quick-nav a:hover {
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+      transform: translateY(-1px);
+    }
+
+    .highlight-card {
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      border-left: 4px solid var(--accent-indigo);
+      border-radius: 14px;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+
+    .highlight-card.warn {
+      border-left-color: var(--accent-amber);
+    }
+
+    .highlight-card.emerald {
+      border-left-color: var(--accent-emerald);
+    }
+
+    .highlight-card h3 {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--accent-indigo);
+      margin: 0 0 8px 0;
+    }
+
+    .highlight-card.warn h3 { color: var(--accent-amber); }
+    .highlight-card.emerald h3 { color: var(--accent-emerald); }
+
+    .highlight-card p {
+      margin-bottom: 0;
+      font-size: 0.94rem;
+    }
+
+    h2 {
+      font-size: 1.55rem;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      margin: 48px 0 16px 0;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--surface-border);
+      color: var(--text-main);
+      scroll-margin-top: 24px;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 28px 0 10px 0;
+      color: var(--text-main);
+    }
+
+    h4 {
+      font-size: 1.02rem;
+      font-weight: 600;
+      margin: 20px 0 8px 0;
+      color: var(--accent-cyan);
+    }
+
+    p {
+      margin-bottom: 14px;
+      color: var(--text-muted);
+      font-size: 0.96rem;
+    }
+
+    ul, ol {
+      margin: 10px 0 18px 22px;
+      color: var(--text-muted);
+      font-size: 0.96rem;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    li strong {
+      color: var(--text-main);
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.86em;
+      background: var(--code-bg);
+      border: 1px solid var(--surface-border);
+      padding: 2px 6px;
+      border-radius: 6px;
+      color: var(--accent-cyan);
+    }
+
+    .code-block {
+      position: relative;
+      margin: 14px 0 22px 0;
+      background: var(--code-bg);
+      border: 1px solid var(--surface-border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .code-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 14px;
+      background: var(--card-bg);
+      border-bottom: 1px solid var(--surface-border);
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-subtle);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .copy-btn {
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      color: var(--text-main);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .copy-btn:hover {
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+    }
+
+    .copy-btn.copied {
+      border-color: var(--accent-emerald);
+      color: var(--accent-emerald);
+    }
+
+    pre {
+      padding: 16px;
+      overflow-x: auto;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.85rem;
+      line-height: 1.55;
+      color: var(--text-main);
+    }
+
+    pre code {
+      background: transparent;
+      border: none;
+      padding: 0;
+      color: inherit;
+      font-size: inherit;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 16px 0 24px 0;
+      border: 1px solid var(--table-border);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+
+    th {
+      background: var(--card-bg);
+      color: var(--text-main);
+      font-weight: 600;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--table-border);
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 11px 14px;
+      border-bottom: 1px solid var(--table-border);
+      color: var(--text-muted);
+      vertical-align: top;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    td strong {
+      color: var(--text-main);
+    }
+
+    .checklist {
+      list-style: none;
+      margin-left: 0;
+    }
+
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 8px 12px;
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      border-radius: 10px;
+      margin-bottom: 8px;
+    }
+
+    .checklist input[type="checkbox"] {
+      margin-top: 4px;
+      accent-color: var(--accent-emerald);
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+
+    footer {
+      margin-top: 56px;
+      padding-top: 24px;
+      border-top: 1px solid var(--surface-border);
+      font-size: 0.88rem;
+      color: var(--text-subtle);
+      text-align: center;
+    }
+
+    footer a {
+      color: var(--accent-cyan);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="top-bar">
+      <a href="../index.html" class="back-link">&larr; Back to UOAI Hub</a>
+      <a href="../ai-prompt/" class="cta-pill">&#10024; Open AI Implementation Prompt &rarr;</a>
+    </div>
+
+    <header>
+      <div class="brand-eyebrow">External Developer Integration Guide &bull; com.uoai.provider</div>
+      <h1>Universal Offline AI Provider — Developer Guide</h1>
+      <p style="font-size: 1.05rem; color: var(--text-muted);">
+        Integrate local, <strong>100% offline on-device Gemma 3 / Gemma 4 LLM inference</strong> into any independent Android app—without bundling model weights or an inference runtime. Your app sends prompts over a localhost loopback API (<code>127.0.0.1:8765</code>) after a one-time, OS-verified user approval.
+      </p>
+      <div class="meta-bar">
+        <span><strong>Provider Package:</strong> <code>com.uoai.provider</code></span>
+        <span><strong>Loopback API:</strong> <code>http://127.0.0.1:8765/v1</code></span>
+        <span><strong>Recommended Model:</strong> <code>"auto"</code></span>
+        <span><strong>Context Cap:</strong> Up to <code>32,768</code> tokens</span>
+      </div>
+
+      <nav class="quick-nav" aria-label="Jump to section">
+        <a href="#handover">Key Constants</a>
+        <a href="#connection">1. Connection &amp; Trust</a>
+        <a href="#path-a">2. Path A: Kotlin SDK</a>
+        <a href="#path-b">3. Path B: Direct HTTP/SSE</a>
+        <a href="#tools">4. Tool Calling</a>
+        <a href="#errors">5. Error Playbook</a>
+        <a href="#scope">6. Context &amp; Scope</a>
+        <a href="#testing">7. Testing &amp; Checklist</a>
+        <a href="../ai-prompt/">AI Coding Prompt</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- AI Prompt Callout -->
+      <div class="highlight-card emerald">
+        <h3>Using an AI Coding Assistant (Cursor, Claude Code, Antigravity, Gemini, Copilot)?</h3>
+        <p>
+          Skip manual wiring—grab our ready-to-paste <a href="../ai-prompt/" style="color: var(--accent-emerald); font-weight: 700;">AI Implementation Prompt</a> designed to inspect your existing Android app and integrate <code>com.uoai.provider</code> cleanly (supports both Path A AAR SDK and Path B Direct HTTP/SSE).
+        </p>
+      </div>
+
+      <!-- Handover Package & Key Constants -->
+      <section id="handover">
+        <h2>Handover Package &amp; Key Constants</h2>
+        <p>Include these deliverables when sharing this guide with an external team:</p>
+        <ol>
+          <li><strong>This document</strong> (<code>EXTERNAL_DEVELOPER_HANDOVER.md</code> / hosted Developer Guide)</li>
+          <li><strong><code>sdk-release.aar</code></strong> (~112 KB, <code>minSdk 26</code>, R8/ProGuard-ready, zero model weights) — <em>optional if using Path B (Direct HTTP/SSE)</em></li>
+          <li><strong>Provider APK / Install Link</strong> for <code>com.uoai.provider</code> <em>(Play Store / GitHub Releases / MDM URL)</em></li>
+        </ol>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Property</th>
+                <th>Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Provider Package ID</strong></td>
+                <td><code>com.uoai.provider</code></td>
+              </tr>
+              <tr>
+                <td><strong>Registration Intent Action</strong></td>
+                <td><code>com.uoai.provider.action.REGISTER</code></td>
+              </tr>
+              <tr>
+                <td><strong>Loopback Base URL</strong></td>
+                <td><code>http://127.0.0.1:8765/v1</code> (loopback only; never <code>0.0.0.0</code>)</td>
+              </tr>
+              <tr>
+                <td><strong>Authentication Header</strong></td>
+                <td><code>Authorization: Bearer uoai_&lt;token&gt;</code> (all <code>/v1/*</code> except <code>/v1/health</code>)</td>
+              </tr>
+              <tr>
+                <td><strong>Recommended <code>model</code> Value</strong></td>
+                <td><code>"auto"</code> (routes automatically to whichever Gemma 3 or Gemma 4 model is loaded)</td>
+              </tr>
+              <tr>
+                <td><strong>Max Request Size</strong></td>
+                <td><code>2,097,152</code> bytes (2 MiB; HTTP <code>413</code> if exceeded)</td>
+              </tr>
+              <tr>
+                <td><strong>Context &amp; Output Token Cap</strong></td>
+                <td>Up to <code>32,768</code> tokens (<code>effective = min(request.max_tokens, client_cap, 32768)</code>)</td>
+              </tr>
+              <tr>
+                <td><strong>Generation Timeout</strong></td>
+                <td><code>300,000 ms</code> (300 s; HTTP <code>504</code> or mid-stream <code>error</code> event)</td>
+              </tr>
+              <tr>
+                <td><strong>Concurrency &amp; Queue</strong></td>
+                <td><code>1</code> active generation shared across apps; queue <code>16</code> global / <code>4</code> per client</td>
+              </tr>
+              <tr>
+                <td><strong>Supported Capabilities</strong></td>
+                <td><code>chat</code>, <code>streaming</code> (SSE), <code>cancellation</code>, <code>tool-calling</code> (<code>embeddings = false</code>)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 1: Connection & Trust -->
+      <section id="connection">
+        <h2>1. How Connection &amp; Trust Work</h2>
+        <p>
+          Two Android apps cannot directly share process memory. Instead, <strong>Universal Offline AI Provider</strong> pairs <strong>Android OS Caller Verification</strong> with <strong>Loopback HTTP/SSE</strong>:
+        </p>
+
+        <div class="code-block">
+          <div class="code-header">
+            <span>Architecture Flow</span>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+          </div>
+          <pre><code>Your Client App                                    Universal Offline AI Provider
+---------------                                    -----------------------------
+1. Check package installed (com.uoai.provider)
+2. startActivityForResult(REGISTER Intent)  -----&gt; OS verifies callingPackage + single APK
+   (Never pass FLAG_ACTIVITY_NEW_TASK!)            signing cert (SHA-256). User approves caps.
+   Receives uoai_&lt;token&gt; once               &lt;----- Returns token via RESULT_OK; stores SHA-256 hash
+   Encrypts token in Android Keystore              in Room (client_credentials table).
+3. GET /v1/health  (unauthenticated)        -----&gt; Checks Ktor server + loaded model state.
+   GET /v1/models &amp; /v1/capabilities        -----&gt; Validates Bearer token; returns model &amp; 32K ctx.
+4. POST /v1/chat/completions (Bearer)       -----&gt; Queues onto single shared Gemma 3 / 4 instance.
+   Receives JSON or SSE stream              &lt;----- Streams data: {...} chunks + data: [DONE]
+5. POST /v1/cancel (Bearer, optional)       -----&gt; Cancels only requests owned by your client.</code></pre>
+        </div>
+
+        <div class="highlight-card warn">
+          <h3>Important Lifecycle Rule</h3>
+          <p>
+            The provider's foreground service (<code>ProviderService</code>) is intentionally <strong>non-sticky</strong>. If the user stops the API or Android reclaims background processes, subsequent calls fail to connect cleanly—always offer a one-tap <strong>Open Provider</strong> recovery action rather than crashing.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 2: Path A -->
+      <section id="path-a">
+        <h2>2. Path A — Recommended Kotlin SDK Integration (<code>sdk-release.aar</code>)</h2>
+        <p>
+          The lightweight AAR handles Keystore encryption (<code>AES/GCM/NoPadding</code>), Bearer token headers, registration Intent handling, connection preflight, SSE parsing, cancellation on coroutine abort, and multi-turn history management.
+        </p>
+
+        <h3>2.1 Gradle Setup (<code>app/build.gradle.kts</code>)</h3>
+        <p>Copy <code>sdk-release.aar</code> into <code>app/libs/</code> and add <strong>3 dependency lines</strong> (<code>minSdk &gt;= 26</code>, Java/Kotlin target 17):</p>
+
+        <div class="code-block">
+          <div class="code-header">
+            <span>kotlin &bull; app/build.gradle.kts</span>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+          </div>
+          <pre><code>dependencies {
+    implementation(files("libs/sdk-release.aar"))
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.11.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.8.1")
+}</code></pre>
+        </div>
+
+        <h4>What <code>sdk-release.aar</code> Configures Automatically</h4>
+        <p>You need <strong>zero</strong> UOAI entries in <code>AndroidManifest.xml</code> and <strong>zero</strong> extra ProGuard rules:</p>
+        <ul>
+          <li>
+            <strong>Auto-merged Manifest &amp; Security:</strong> Embeds <code>android.permission.INTERNET</code>, <code>&lt;queries&gt;&lt;package android:name="com.uoai.provider" /&gt;&lt;/queries&gt;</code>, and a loopback-only <code>android:networkSecurityConfig="@xml/uoai_network_security_config"</code> (<code>127.0.0.1</code> and <code>localhost</code> only—no wide <code>usesCleartextTraffic="true"</code>).<br>
+            <em>Already have your own <code>networkSecurityConfig</code>?</em> Add <code>tools:replace="android:networkSecurityConfig"</code> on <code>&lt;application&gt;</code> in your manifest and whitelist <code>&lt;domain includeSubdomains="false"&gt;127.0.0.1&lt;/domain&gt;</code> + <code>localhost</code> inside your XML.
+          </li>
+          <li>
+            <strong>R8 / ProGuard Consumer Rules:</strong> Embedded <code>consumer-rules.pro</code> preserves <code>com.uoai.sdk.**</code> and <code>kotlinx.serialization</code> serializers when <code>isMinifyEnabled = true</code>.
+          </li>
+        </ul>
+
+        <h4>Critical Signing Setup (<code>certificate_mismatch</code> Prevention)</h4>
+        <p>
+          The provider pins your <code>packageName</code> to its single-signer APK SHA-256 certificate on first registration. Give your <code>debug</code> and <code>release</code> APKs separate package names so switching builds on a test phone never triggers <code>certificate_mismatch</code>:
+        </p>
+
+        <div class="code-block">
+          <div class="code-header">
+            <span>kotlin &bull; app/build.gradle.kts</span>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+          </div>
+          <pre><code>android {
+    defaultConfig {
+        applicationId = "com.yourcompany.yourapp"
+    }
+    buildTypes {
+        debug {
+            applicationIdSuffix = ".debug"
+        }
+    }
+}</code></pre>
+        </div>
+        <p><em>Also ensure your release APK uses a single signing key—multi-signer APKs are rejected.</em></p>
+
+        <h3>2.2 Complete Drop-In Integration (ViewModel + Compose / Activity)</h3>
+        <ol>
+          <li>Create <code>val ai = UniversalAIClient(applicationContext)</code> (zero config needed; defaults to <code>ClientConfig(model = "auto")</code>).</li>
+          <li>Call <code>ai.checkConnection()</code> on startup and on <code>ON_RESUME</code> (when returning from the provider app).</li>
+          <li>Use <code>ai.startChat(...)</code> to stream multi-turn responses with automatic sliding history and rollback on failures.</li>
+        </ol>
+
+        <div class="code-block">
+          <div class="code-header">
+            <span>kotlin &bull; AiViewModel + AiActivity</span>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+          </div>
+          <pre><code>import android.app.Application
+import android.content.Intent
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.compose.setContent
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.foundation.layout.*
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+import androidx.lifecycle.*
+import androidx.lifecycle.compose.LocalLifecycleOwner
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.uoai.sdk.ConnectionState
+import com.uoai.sdk.RegistrationResult
+import com.uoai.sdk.UniversalAIClient
+import com.uoai.sdk.exceptions.*
+import kotlinx.coroutines.CancellationException
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.launch
+
+data class AiUiState(
+    val connection: ConnectionState? = null,
+    val output: String = "",
+    val streaming: Boolean = false,
+    val notice: String? = null,
+)
+
+class AiViewModel(app: Application) : AndroidViewModel(app) {
+    private val ai = UniversalAIClient(app) // defaults to http://127.0.0.1:8765/v1, model = "auto"
+    private val session = ai.startChat(systemPrompt = "You are a helpful, concise assistant.")
+
+    private val _ui = MutableStateFlow(AiUiState())
+    val ui: StateFlow&lt;AiUiState&gt; = _ui.asStateFlow()
+    private var streamJob: Job? = null
+
+    init { refreshConnection() }
+
+    fun refreshConnection() = viewModelScope.launch {
+        _ui.update { it.copy(connection = ai.checkConnection()) }
+    }
+
+    fun onRegistrationResult(resultCode: Int, data: Intent?) {
+        when (val res = ai.handleRegistrationResult(resultCode, data)) {
+            RegistrationResult.Approved -&gt; {
+                _ui.update { it.copy(notice = null) }
+                refreshConnection()
+            }
+            is RegistrationResult.Denied -&gt; {
+                _ui.update { it.copy(notice = "Denied (${res.code}): ${res.message}") }
+            }
+        }
+    }
+
+    fun send(prompt: String) {
+        if (prompt.isBlank() || _ui.value.streaming) return
+        _ui.update { it.copy(output = "", streaming = true, notice = null) }
+        streamJob = viewModelScope.launch {
+            try {
+                session.sendStream(prompt).collect { token -&gt;
+                    _ui.update { it.copy(output = it.output + token) }
+                }
+                _ui.update { it.copy(streaming = false) }
+            } catch (_: CancellationException) {
+                _ui.update { it.copy(streaming = false, notice = "Stopped") }
+            } catch (_: RequestCancelledException) {
+                _ui.update { it.copy(streaming = false, notice = "Cancelled") }
+            } catch (e: NotRegisteredException) {
+                ai.clearCredentials()
+                _ui.update { it.copy(streaming = false, notice = e.message) }
+                refreshConnection()
+            } catch (e: UniversalAIException) {
+                _ui.update { it.copy(streaming = false, notice = e.message) }
+                refreshConnection()
+            }
+        }
+    }
+
+    fun stop() { streamJob?.cancel() } // automatically calls POST /v1/cancel
+}
+
+class AiActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContent {
+            val vm: AiViewModel = viewModel()
+            val ui by vm.ui.collectAsStateWithLifecycle()
+            val regLauncher = rememberLauncherForActivityResult(
+                ActivityResultContracts.StartActivityForResult(),
+            ) { r -&gt; vm.onRegistrationResult(r.resultCode, r.data) }
+
+            val lifecycleOwner = LocalLifecycleOwner.current
+            DisposableEffect(lifecycleOwner) {
+                val obs = LifecycleEventObserver { _, ev -&gt;
+                    if (ev == Lifecycle.Event.ON_RESUME) vm.refreshConnection()
+                }
+                lifecycleOwner.lifecycle.addObserver(obs)
+                onDispose { lifecycleOwner.lifecycle.removeObserver(obs) }
+            }
+
+            Column(Modifier.fillMaxSize().padding(16.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
+                when (val conn = ui.connection) {
+                    ConnectionState.ProviderNotInstalled -&gt;
+                        Text("Please install Universal Offline AI Provider (com.uoai.provider).")
+                    is ConnectionState.NeedsRegistration -&gt;
+                        Button(onClick = { regLauncher.launch(conn.registrationIntent) }) { Text("Approve Provider Access") }
+                    is ConnectionState.ProviderNotRunning -&gt;
+                        Button(onClick = { conn.launchProviderIntent?.let(::startActivity) }) { Text("Open Provider &amp; Start API") }
+                    is ConnectionState.ModelNotReady -&gt;
+                        Button(onClick = { conn.launchProviderIntent?.let(::startActivity) }) { Text("Load Model (${conn.modelState})") }
+                    is ConnectionState.Error -&gt;
+                        Button(onClick = vm::refreshConnection) { Text("Retry: ${conn.message}") }
+                    is ConnectionState.Connected -&gt; {
+                        Text("Ready: ${conn.activeModel?.name} (ctx=${conn.capabilities.contextWindowTokens})")
+                        Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                            Button(onClick = { vm.send("Summarize on-device AI in 3 bullets.") }, enabled = !ui.streaming) { Text("Ask AI") }
+                            if (ui.streaming) OutlinedButton(onClick = vm::stop) { Text("Stop") }
+                        }
+                    }
+                    null -&gt; CircularProgressIndicator()
+                }
+                ui.notice?.let { Text(it, color = MaterialTheme.colorScheme.error) }
+                Text(ui.output)
+            }
+        }
+    }
+}</code></pre>
+        </div>
+
+        <h3>2.3 SDK Public API Summary</h3>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Symbol</th>
+                <th>Purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>UniversalAIClient(context, config)</code></td>
+                <td>Entry point (<code>ClientConfig(model = "auto")</code> by default). Uses Android Keystore-encrypted <code>TokenStore</code>.</td>
+              </tr>
+              <tr>
+                <td><code>suspend fun checkConnection(): ConnectionState</code></td>
+                <td>One-call check returning <code>ProviderNotInstalled</code>, <code>NeedsRegistration</code>, <code>ProviderNotRunning</code>, <code>ModelNotReady</code>, <code>Connected</code>, or <code>Error</code>. Automatically clears stale revoked tokens.</td>
+              </tr>
+              <tr>
+                <td><code>fun isProviderInstalled(): Boolean</code></td>
+                <td>Returns <code>true</code> if <code>com.uoai.provider</code> is installed on the device.</td>
+              </tr>
+              <tr>
+                <td><code>fun registrationIntent(): Intent</code></td>
+                <td>Intent for <code>startActivityForResult</code>. Never add <code>FLAG_ACTIVITY_NEW_TASK</code>.</td>
+              </tr>
+              <tr>
+                <td><code>fun handleRegistrationResult(code, data)</code></td>
+                <td>Saves issued token into Keystore and returns <code>RegistrationResult.Approved</code> or <code>.Denied</code>.</td>
+              </tr>
+              <tr>
+                <td><code>fun openProviderIntent(): Intent?</code></td>
+                <td>Launch Intent (<code>FLAG_ACTIVITY_NEW_TASK</code>) to open Universal Offline AI Provider for recovery.</td>
+              </tr>
+              <tr>
+                <td><code>fun startChat(...): ChatSession</code></td>
+                <td>Stateful multi-turn session (<code>send()</code>, <code>sendStream()</code>, <code>restoreHistory()</code>, <code>clear()</code>, <code>messages</code>).</td>
+              </tr>
+              <tr>
+                <td><code>suspend fun connect() / health() / models() / capabilities()</code></td>
+                <td>Low-level inspection methods (<code>ProviderHealth</code>, <code>List&lt;ModelInfo&gt;</code>, <code>Capabilities</code>).</td>
+              </tr>
+              <tr>
+                <td><code>suspend fun generate(...) / chat(...)</code></td>
+                <td>One-shot or multi-turn non-streaming completions (supports <code>tools</code> and <code>useProviderTools</code>).</td>
+              </tr>
+              <tr>
+                <td><code>fun generateStream(...) / chatStream(...)</code></td>
+                <td>Cold <code>Flow&lt;String&gt;</code> SSE stream; cancelling collection calls <code>POST /v1/cancel</code>.</td>
+              </tr>
+              <tr>
+                <td><code>suspend fun cancel(requestId): Boolean</code></td>
+                <td>Explicitly cancels an in-flight request by <code>X-Request-Id</code>.</td>
+              </tr>
+              <tr>
+                <td><code>fun clearCredentials()</code></td>
+                <td>Deletes the cached token from Keystore-backed preferences.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 3: Path B -->
+      <section id="path-b">
+        <h2>3. Path B — Direct HTTP/SSE Integration (Without the AAR)</h2>
+        <p>Use this path for Java-only apps, custom HTTP stacks (OkHttp/Ktor), Flutter method channels, or React Native native modules.</p>
+
+        <h3>3.1 Required Manifest &amp; Loopback Security Config</h3>
+        <p>Add to <code>AndroidManifest.xml</code> (on Android 11+/API 30+, <code>&lt;queries&gt;</code> is mandatory):</p>
+
+        <div class="code-block">
+          <div class="code-header">
+            <span>xml &bull; AndroidManifest.xml</span>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+          </div>
+          <pre><code>&lt;manifest xmlns:android="http://schemas.android.com/apk/res/android"&gt;
+    &lt;uses-permission android:name="android.permission.INTERNET" /&gt;
+
+    &lt;queries&gt;
+        &lt;package android:name="com.uoai.provider" /&gt;
+    &lt;/queries&gt;
+
+    &lt;application
+        android:networkSecurityConfig="@xml/network_security_config"
+        ...&gt;
+        ...
+    &lt;/application&gt;
+&lt;/manifest&gt;</code></pre>
+        </div>
+
+        <p>Create <code>res/xml/network_security_config.xml</code> (cleartext restricted strictly to loopback):</p>
+
+        <div class="code-block">
+          <div class="code-header">
+            <span>xml &bull; res/xml/network_security_config.xml</span>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+          </div>
+          <pre><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;network-security-config&gt;
+    &lt;domain-config cleartextTrafficPermitted="true"&gt;
+        &lt;domain includeSubdomains="false"&gt;127.0.0.1&lt;/domain&gt;
+        &lt;domain includeSubdomains="false"&gt;localhost&lt;/domain&gt;
+    &lt;/domain-config&gt;
+&lt;/network-security-config&gt;</code></pre>
+        </div>
+
+        <h3>3.2 Registration Intent Protocol</h3>
+        <p>Launch with <code>startActivityForResult</code> or <code>ActivityResultContracts.StartActivityForResult()</code> (do <strong>not</strong> set <code>FLAG_ACTIVITY_NEW_TASK</code> or Android clears the OS caller identity):</p>
+
+        <div class="code-block">
+          <div class="code-header">
+            <span>kotlin &bull; Registration Launch</span>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+          </div>
+          <pre><code>val intent = Intent("com.uoai.provider.action.REGISTER").setPackage("com.uoai.provider")
+registrationLauncher.launch(intent)</code></pre>
+        </div>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Result Code</th>
+                <th>Extras</th>
+                <th>Meaning &amp; Required Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>Activity.RESULT_OK</code></td>
+                <td><code>token: String</code> (<code>"uoai_..."</code>), <code>client_id: String</code></td>
+                <td>Approved. Persist <code>token</code> in Android Keystore / <code>EncryptedSharedPreferences</code>. If already <code>APPROVED</code> with matching cert, provider silently rotates and returns a fresh token.</td>
+              </tr>
+              <tr>
+                <td><code>Activity.RESULT_CANCELED</code></td>
+                <td><code>error_code: String</code>, <code>error: String</code></td>
+                <td>Denied or aborted. Codes: <code>no_caller</code>, <code>identity</code>, <code>certificate_mismatch</code>, <code>disabled</code>, <code>rejected</code>, <code>cancelled</code>.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>3.3 HTTP &amp; SSE Endpoint Reference (<code>http://127.0.0.1:8765/v1</code>)</h3>
+
+        <h4>1. <code>GET /v1/health</code> <em>(Unauthenticated)</em></h4>
+        <div class="code-block">
+          <div class="code-header">
+            <span>json</span>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+          </div>
+          <pre><code>{
+  "status": "ok",
+  "model_state": "READY",
+  "model_loaded": true,
+  "api_version": "v1"
+}</code></pre>
+        </div>
+        <p>Possible <code>model_state</code> values: <code>NOT_INSTALLED</code>, <code>DOWNLOADING</code>, <code>VERIFYING</code>, <code>LOADING</code>, <code>READY</code>, <code>GENERATING</code>, <code>UNLOADING</code>, <code>ERROR</code>. When unavailable, <code>status</code> is <code>"degraded"</code>, <code>model_loaded</code> is <code>false</code>, and optional <code>model_error</code> explains why.</p>
+
+        <h4>2. <code>GET /v1/models</code> <em>(Authenticated)</em></h4>
+        <div class="code-block">
+          <div class="code-header">
+            <span>json</span>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+          </div>
+          <pre><code>{
+  "object": "list",
+  "data": [
+    {
+      "id": "gemma-4-e2b",
+      "object": "model",
+      "owned_by": "universal-offline-ai",
+      "name": "gemma-4-E2B-it",
+      "format": "litertlm",
+      "quantization": "e2b",
+      "size_bytes": 2588100000,
+      "ready": true,
+      "context_window": 32768
+    }
+  ]
+}</code></pre>
+        </div>
+
+        <h4>3. <code>GET /v1/capabilities</code> <em>(Authenticated)</em></h4>
+        <p>Call on startup to inspect dynamic limits and enabled provider tools:</p>
+        <div class="code-block">
+          <div class="code-header">
+            <span>json</span>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+          </div>
+          <pre><code>{
+  "features": ["chat", "streaming", "cancellation", "tool-calling"],
+  "max_request_bytes": 2097152,
+  "max_tokens_limit": 32768,
+  "concurrent_generations": 1,
+  "embeddings": false,
+  "provider_tools": ["calculator", "device_info"],
+  "context_window_tokens": 32768,
+  "default_max_tokens": 2048
+}</code></pre>
+        </div>
+
+        <h4>4. <code>POST /v1/chat/completions</code> <em>(Authenticated)</em></h4>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Type</th>
+                <th>Required</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>model</code></td>
+                <td><code>string</code></td>
+                <td>No</td>
+                <td>Use <code>"auto"</code> (recommended) or active <code>id</code> / <code>"default"</code> / <code>"gemma-4"</code> / <code>"gemma-3"</code>. Unknown models return <code>404</code>.</td>
+              </tr>
+              <tr>
+                <td><code>messages</code></td>
+                <td><code>array</code></td>
+                <td><strong>Yes</strong></td>
+                <td>Objects with <code>role</code> (<code>"system" | "user" | "assistant" | "tool"</code>), <code>content</code>, and optional <code>tool_call_id</code>, <code>name</code>. Must include at least one <code>"user"</code> or <code>"tool"</code> message.</td>
+              </tr>
+              <tr>
+                <td><code>temperature</code></td>
+                <td><code>float</code></td>
+                <td>No</td>
+                <td><code>0.0 .. 2.0</code> (provider default if omitted).</td>
+              </tr>
+              <tr>
+                <td><code>max_tokens</code></td>
+                <td><code>int</code></td>
+                <td>No</td>
+                <td><code>1 .. 32768</code> (clamped by client permission &amp; provider cap).</td>
+              </tr>
+              <tr>
+                <td><code>top_p</code></td>
+                <td><code>float</code></td>
+                <td>No</td>
+                <td>Nucleus sampling (clamped to <code>0.05 .. 1.0</code>).</td>
+              </tr>
+              <tr>
+                <td><code>top_k</code></td>
+                <td><code>int</code></td>
+                <td>No</td>
+                <td>Top-k sampling (clamped to <code>1 .. 128</code>).</td>
+              </tr>
+              <tr>
+                <td><code>stream</code></td>
+                <td><code>boolean</code></td>
+                <td>No</td>
+                <td><code>false</code> (JSON) or <code>true</code> (SSE). Requires <code>streaming</code> permission.</td>
+              </tr>
+              <tr>
+                <td><code>tools</code></td>
+                <td><code>array</code></td>
+                <td>No</td>
+                <td>Client-owned function schemas (<code>stream</code> must be <code>false</code>). Requires <code>toolCalling</code> permission.</td>
+              </tr>
+              <tr>
+                <td><code>use_provider_tools</code></td>
+                <td><code>boolean</code></td>
+                <td>No</td>
+                <td>Injects provider-owned tools (<code>stream</code> must be <code>false</code>). Requires <code>toolCalling</code> permission.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>Every <code>200 OK</code> response returns header <code>X-Request-Id: chatcmpl-&lt;uuid&gt;</code> (store it immediately for cancellation).</p>
+
+        <p><strong>Non-Streaming (<code>stream: false</code>) Response:</strong></p>
+        <div class="code-block">
+          <div class="code-header">
+            <span>json</span>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+          </div>
+          <pre><code>{
+  "id": "chatcmpl-d425bd9b-a9a2-44f1-9cb1-53fb58590ddb",
+  "object": "chat.completion",
+  "created": 1795105164,
+  "model": "gemma-4-e2b",
+  "choices": [
+    {
+      "index": 0,
+      "message": { "role": "assistant", "content": "Paris" },
+      "finish_reason": "stop"
+    }
+  ]
+}</code></pre>
+        </div>
+
+        <p><strong>Streaming (<code>stream: true</code>, header <code>Accept: text/event-stream</code>) SSE Events:</strong></p>
+        <div class="code-block">
+          <div class="code-header">
+            <span>text/event-stream</span>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+          </div>
+          <pre><code>data: {"id":"chatcmpl-...","object":"chat.completion.chunk","created":1795105166,"model":"gemma-4-e2b","choices":[{"index":0,"delta":{"role":"assistant"}}]}
+
+data: {"id":"chatcmpl-...","object":"chat.completion.chunk","created":1795105166,"model":"gemma-4-e2b","choices":[{"index":0,"delta":{"content":"Hello"}}]}
+
+data: {"id":"chatcmpl-...","object":"chat.completion.chunk","created":1795105166,"model":"gemma-4-e2b","choices":[{"index":0,"delta":{},"finish_reason":"stop"}]}
+
+data: [DONE]</code></pre>
+        </div>
+        <p>SSE parsing rules: skip blank lines and lines not starting with <code>data:</code>, trim prefix <code>data:</code>, stop at <code>[DONE]</code>, abort if <code>"error"</code> JSON key appears, append <code>choices[0].delta.content</code>, and handle <code>finish_reason == "cancelled"</code>.</p>
+
+        <h4>5. <code>POST /v1/cancel</code> <em>(Authenticated)</em></h4>
+        <div class="code-block">
+          <div class="code-header">
+            <span>json</span>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+          </div>
+          <pre><code>// Request
+{ "request_id": "chatcmpl-8b26e9d9-1b6b-41e9-aa85-fc8bdb7b163f" }
+
+// Response
+{ "request_id": "chatcmpl-8b26e9d9-1b6b-41e9-aa85-fc8bdb7b163f", "cancelled": true }</code></pre>
+        </div>
+        <p><em>Client-isolated: cancelling another app's or unknown request ID returns <code>cancelled: false</code>.</em></p>
+
+        <h3>3.4 Minimal OkHttp Snippet</h3>
+        <div class="code-block">
+          <div class="code-header">
+            <span>kotlin &bull; OkHttp</span>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+          </div>
+          <pre><code>val http = OkHttpClient.Builder()
+    .connectTimeout(3, TimeUnit.SECONDS)
+    .readTimeout(300, TimeUnit.SECONDS)
+    .build()
+
+val req = Request.Builder()
+    .url("http://127.0.0.1:8765/v1/chat/completions")
+    .header("Authorization", "Bearer $token")
+    .post("""{"model":"auto","messages":[{"role":"user","content":"Hi"}],"stream":false}"""
+        .toRequestBody("application/json".toMediaType()))
+    .build()
+
+http.newCall(req).execute().use { resp -&gt;
+    val requestId = resp.header("X-Request-Id")
+    val body = resp.body?.string().orEmpty()
+    if (!resp.isSuccessful) error("HTTP ${resp.code}: $body")
+    // Parse choices[0].message.content
+}</code></pre>
+        </div>
+      </section>
+
+      <!-- Section 4: Tool Calling -->
+      <section id="tools">
+        <h2>4. Tool Calling (<code>tools</code> &amp; <code>use_provider_tools</code>)</h2>
+        <p>Requires <code>toolCalling</code> permission enabled in the provider and <strong><code>stream: false</code></strong>.</p>
+        <ul>
+          <li>
+            <strong>Client-Owned Tools (<code>tools</code>):</strong> Supply OpenAI-style <code>{"type":"function","function":{"name","description","parameters":{...}}}</code> specs. When triggered, the provider returns <code>finish_reason: "tool_calls"</code> and <code>message.tool_calls</code> (<code>id</code>, <code>function.name</code>, JSON string <code>function.arguments</code>). Your app runs the local function and sends a follow-up turn containing:
+            <ol style="margin-top: 8px;">
+              <li>Original <code>user</code> message</li>
+              <li><code>assistant</code> message with <code>"content": "&lt;tool_call&gt;{\"name\":\"...\",\"arguments\":{...}}&lt;/tool_call&gt;"</code></li>
+              <li><code>tool</code> message with <code>{"role":"tool","tool_call_id":"...","name":"...","content":"&lt;result&gt;"}</code></li>
+            </ol>
+          </li>
+          <li>
+            <strong>Provider-Owned Safe Tools (<code>use_provider_tools: true</code>):</strong> Automatically executes enabled provider tools (<code>calculator</code>, <code>device_info</code>) and returns the final <code>assistant</code> answer directly.
+          </li>
+        </ul>
+      </section>
+
+      <!-- Section 5: Error Codes -->
+      <section id="errors">
+        <h2>5. Error Codes &amp; Recovery Playbook</h2>
+        <p>All non-2xx HTTP responses follow <code>{"error":{"message":"...","type":"...","code":"..."}}</code>:</p>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>HTTP / Failure</th>
+                <th><code>error.code</code></th>
+                <th>SDK Exception</th>
+                <th>Client UI Recovery</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><em>(Package missing)</em></td>
+                <td>—</td>
+                <td><code>ProviderNotInstalledException</code></td>
+                <td>Show <strong>"Install Universal Offline AI Provider"</strong> (<code>com.uoai.provider</code>)</td>
+              </tr>
+              <tr>
+                <td><em>(Socket refused)</em></td>
+                <td>—</td>
+                <td><code>ProviderNotRunningException</code></td>
+                <td>Prompt user to tap <strong>Open Provider</strong> and start the API server</td>
+              </tr>
+              <tr>
+                <td><strong>400</strong></td>
+                <td><code>invalid_json</code>, <code>missing_messages</code>, <code>invalid_role</code>, <code>missing_user_message</code>, <code>invalid_temperature</code>, <code>invalid_max_tokens</code>, <code>invalid_request</code></td>
+                <td><code>ApiException</code></td>
+                <td>Fix payload (<code>temperature</code> <code>0..2</code>, <code>max_tokens</code> <code>1..32768</code>, &ge;1 user/tool msg)</td>
+              </tr>
+              <tr>
+                <td><strong>401</strong></td>
+                <td><code>missing_token</code>, <code>invalid_token</code></td>
+                <td><code>NotRegisteredException</code></td>
+                <td>Clear saved token and relaunch registration Intent</td>
+              </tr>
+              <tr>
+                <td><strong>403</strong></td>
+                <td><code>permission_denied</code></td>
+                <td><code>PermissionDeniedException</code></td>
+                <td>Tell user to enable <code>chat</code>, <code>streaming</code>, or <code>tool_calling</code> in Provider &rarr; Clients</td>
+              </tr>
+              <tr>
+                <td><strong>404</strong></td>
+                <td><code>model_not_found</code></td>
+                <td><code>ApiException</code></td>
+                <td>Pass <code>"model": "auto"</code> or query <code>GET /v1/models</code></td>
+              </tr>
+              <tr>
+                <td><strong>409</strong></td>
+                <td><code>request_cancelled</code></td>
+                <td><code>RequestCancelledException</code></td>
+                <td>Clean user abort</td>
+              </tr>
+              <tr>
+                <td><strong>413</strong></td>
+                <td><code>request_too_large</code></td>
+                <td><code>ApiException</code></td>
+                <td>Trim message history below <code>2 MiB</code></td>
+              </tr>
+              <tr>
+                <td><strong>429</strong></td>
+                <td><code>queue_full</code></td>
+                <td><code>ApiException</code></td>
+                <td>Queue limit hit (<code>16</code> global / <code>4</code> per client); back off briefly &amp; retry</td>
+              </tr>
+              <tr>
+                <td><strong>500</strong></td>
+                <td><code>internal_error</code>, <code>inference_failed</code></td>
+                <td><code>ApiException</code></td>
+                <td>Display error &amp; offer retry</td>
+              </tr>
+              <tr>
+                <td><strong>503</strong></td>
+                <td><code>model_not_ready</code></td>
+                <td><code>ModelNotReadyException</code></td>
+                <td>Prompt user to <strong>Open Provider</strong> and load a model</td>
+              </tr>
+              <tr>
+                <td><strong>504</strong></td>
+                <td><code>request_timeout</code></td>
+                <td><code>ApiException</code></td>
+                <td>Exceeded <code>300 s</code>; reduce prompt size or <code>max_tokens</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 6: Context Budgeting & Scope -->
+      <section id="scope">
+        <h2>6. Context Budgeting, Model Support &amp; Scope Boundaries</h2>
+        <ul>
+          <li><strong>Supported Models:</strong> Works seamlessly across Gemma 3 (<code>.task</code> / <code>.litertlm</code>) and all Gemma 4 tiers (<code>E2B</code>, <code>E4B</code>, <code>12B</code>, <code>26B-A4B</code>, <code>31B</code>) when you pass <code>"model": "auto"</code>.</li>
+          <li><strong>Up to 32K Context Window:</strong> Always read <code>GET /v1/capabilities</code> on connect (<code>context_window_tokens</code>, <code>default_max_tokens</code>, <code>max_tokens_limit</code>) and keep your local history bounded so <code>prompt_tokens + max_tokens &lt;= context_window_tokens</code>.</li>
+          <li><strong>Privacy Guarantee:</strong> Your app owns conversation storage; the provider does <strong>not</strong> persist prompt text or model responses in its database and never requires internet access after model download.</li>
+          <li><strong>What Is Out of Scope for the Provider:</strong> UOAI Provider exposes <strong>text chat &amp; tool calling only</strong>. Embeddings (<code>embeddings: false</code>), Speech-to-Text / audio capture, multimodal vision inputs, and app-specific privacy/consent flows must be handled inside your own client app before calling <code>/v1/chat/completions</code>.</li>
+        </ul>
+      </section>
+
+      <!-- Section 7: Testing & Checklist -->
+      <section id="testing">
+        <h2>7. Testing, ADB Debugging &amp; Pre-Release Checklist</h2>
+
+        <h3>Inspecting Live API From Your Workstation</h3>
+        <div class="code-block">
+          <div class="code-header">
+            <span>bash &bull; ADB Forward</span>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+          </div>
+          <pre><code>adb forward tcp:8765 tcp:8765
+curl -s http://127.0.0.1:8765/v1/health
+curl -s -H "Authorization: Bearer $TOKEN" http://127.0.0.1:8765/v1/capabilities</code></pre>
+        </div>
+
+        <h3>Pre-Release Checklist</h3>
+        <ul class="checklist">
+          <li><input type="checkbox"> <span>Pass <code>"model": "auto"</code> and read <code>GET /v1/capabilities</code> dynamically instead of hardcoding model IDs or context sizes.</span></li>
+          <li><input type="checkbox"> <span>Use distinct debug vs. release <code>applicationId</code> (<code>applicationIdSuffix = ".debug"</code>) and sign release APKs with a <strong>single</strong> signing certificate.</span></li>
+          <li><input type="checkbox"> <span>Launch <code>com.uoai.provider.action.REGISTER</code> with <code>startActivityForResult</code> (never <code>FLAG_ACTIVITY_NEW_TASK</code>).</span></li>
+          <li><input type="checkbox"> <span>Re-check provider state on <code>ON_RESUME</code> so returning from the provider app auto-connects immediately.</span></li>
+          <li><input type="checkbox"> <span>Test an R8-minified release build (<code>isMinifyEnabled = true</code>) end-to-end against <code>com.uoai.provider</code> on a real device.</span></li>
+          <li><input type="checkbox"> <span>Confirm your final APK contains <strong>zero</strong> <code>.task</code>, <code>.litertlm</code>, or <code>.bin</code> weights (<code>unzip -l app-release.apk</code>).</span></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Universal Offline AI (UOAI). All rights reserved.</p>
+      <p style="margin-top: 6px;">
+        <a href="../index.html">UOAI Hub</a> &bull;
+        <a href="../ai-prompt/">AI Implementation Prompt</a> &bull;
+        <a href="../uoai-provider/">UOAI Provider Privacy Policy</a> &bull;
+        <a href="../uoai-chat/">UOAI Chat Privacy Policy</a>
+      </p>
+    </footer>
+  </div>
+
+  <script>
+    function copyCode(btn) {
+      const pre = btn.closest('.code-block').querySelector('pre');
+      navigator.clipboard.writeText(pre.innerText).then(() => {
+        const orig = btn.textContent;
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.textContent = orig;
+          btn.classList.remove('copied');
+        }, 1800);
+      });
+    }
+  </script>
+
+</body>
+</html>

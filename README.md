@@ -1,19 +1,21 @@
-# Universal Offline AI (UOAI) — Privacy Policy Repository
+# Universal Offline AI (UOAI) — Privacy Policy & Developer Docs Repository
 
-Official privacy policy and Google Play Store compliance documents for the **Universal Offline AI (UOAI)** Android applications.
+Official privacy policy, Google Play Store compliance documents, external developer integration guide, and AI coding assistant prompts for the **Universal Offline AI (UOAI)** Android ecosystem.
 
 ---
 
-## 🌐 Hosted Privacy Policies (GitHub Pages)
+## 🌐 Hosted Pages (GitHub Pages)
 
 When GitHub Pages is enabled on the `main` branch, the following URLs are available:
 
-| App / Document | Package ID | Live URL (GitHub Pages) | Local File |
+| Resource / App | Package ID / Scope | Live URL (GitHub Pages) | Local File |
 |---|---|---|---|
-| **Privacy Hub (Home)** | — | `https://kumodd.github.io/privacy-policy/` | [`index.html`](file:///Users/kumodyadav/Desktop/PrivacyPilicy/index.html) |
-| **UOAI Provider** | `com.uoai.provider` | `https://kumodd.github.io/privacy-policy/uoai-provider/` | [`policies/uoai-provider.html`](file:///Users/kumodyadav/Desktop/PrivacyPilicy/policies/uoai-provider.html) |
-| **UOAI Chat** | `com.uoai.chat` | `https://kumodd.github.io/privacy-policy/uoai-chat/` | [`policies/uoai-chat.html`](file:///Users/kumodyadav/Desktop/PrivacyPilicy/policies/uoai-chat.html) |
-| **Ecosystem Combined** | Both Apps | `https://kumodd.github.io/privacy-policy/privacy-policy.html` | [`privacy-policy.html`](file:///Users/kumodyadav/Desktop/PrivacyPilicy/privacy-policy.html) |
+| **UOAI Hub (Home)** | — | `https://kumodd.github.io/privacy-policy/` | [`index.html`](index.html) |
+| **Developer Integration Guide** | `com.uoai.provider` | `https://kumodd.github.io/privacy-policy/developer-guide/` | [`developer-guide/index.html`](developer-guide/index.html) |
+| **AI Implementation Prompt** | Existing Android Apps | `https://kumodd.github.io/privacy-policy/ai-prompt/` | [`ai-prompt/index.html`](ai-prompt/index.html) |
+| **UOAI Provider Privacy Policy** | `com.uoai.provider` | `https://kumodd.github.io/privacy-policy/uoai-provider/` | [`policies/uoai-provider.html`](policies/uoai-provider.html) |
+| **UOAI Chat Privacy Policy** | `com.uoai.chat` | `https://kumodd.github.io/privacy-policy/uoai-chat/` | [`policies/uoai-chat.html`](policies/uoai-chat.html) |
+| **Ecosystem Combined Policy** | Both Apps | `https://kumodd.github.io/privacy-policy/privacy-policy.html` | [`privacy-policy.html`](privacy-policy.html) |
 
 ---
 
@@ -23,6 +25,10 @@ When GitHub Pages is enabled on the `main` branch, the following URLs are availa
 privacy-policy/
 ├── index.html                    # Root portal / hub for GitHub Pages
 ├── privacy-policy.html           # Full combined ecosystem privacy policy
+├── developer-guide/
+│   └── index.html                # External Developer Integration Guide (Path A & Path B)
+├── ai-prompt/
+│   └── index.html                # Copy-paste AI coding prompts for existing Android apps
 ├── policies/                     # Dedicated individual app policies
 │   ├── uoai-provider.html        # UOAI Provider standalone policy
 │   └── uoai-chat.html            # UOAI Chat standalone policy
