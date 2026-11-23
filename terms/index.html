@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service — Universal Offline AI (UOAI) Ecosystem</title>
+  <meta name="description" content="Official Terms of Service for Universal Offline AI (UOAI) Android apps: UOAI Provider, UOAI Chat, and UOAI Keyboard.">
+  <style>
+    :root {
+      --bg: #090e1a;
+      --surface: #10192e;
+      --surface-border: #1e293b;
+      --card-bg: #152238;
+      --card-border: #243553;
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --text-subtle: #64748b;
+      --accent-cyan: #38bdf8;
+      --accent-emerald: #34d399;
+      --accent-indigo: #818cf8;
+      --badge-bg: rgba(56, 189, 248, 0.12);
+      --badge-border: rgba(56, 189, 248, 0.35);
+      --badge-text: #38bdf8;
+      --code-bg: #0b1322;
+      --table-border: #243553;
+      --max-width: 860px;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f8fafc;
+        --surface: #ffffff;
+        --surface-border: #e2e8f0;
+        --card-bg: #f1f5f9;
+        --card-border: #cbd5e1;
+        --text-main: #0f172a;
+        --text-muted: #475569;
+        --text-subtle: #64748b;
+        --accent-cyan: #0284c7;
+        --accent-emerald: #059669;
+        --accent-indigo: #4f46e5;
+        --badge-bg: rgba(2, 132, 199, 0.08);
+        --badge-border: rgba(2, 132, 199, 0.25);
+        --badge-text: #0284c7;
+        --code-bg: #e2e8f0;
+        --table-border: #e2e8f0;
+      }
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.68;
+      padding: 32px 16px 64px 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container { max-width: var(--max-width); margin: 0 auto; }
+
+    header {
+      padding: 24px 0 32px 0;
+      border-bottom: 1px solid var(--surface-border);
+      margin-bottom: 32px;
+    }
+
+    .brand-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      color: var(--badge-text);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+
+    .meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-top: 10px;
+    }
+
+    .meta-bar span strong { color: var(--text-main); }
+
+    .quick-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .quick-nav a {
+      display: inline-flex;
+      align-items: center;
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 12px;
+      transition: all 0.15s ease;
+    }
+
+    .quick-nav a:hover {
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+      transform: translateY(-1px);
+    }
+
+    .highlight-card {
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      border-left: 4px solid var(--accent-cyan);
+      border-radius: 14px;
+      padding: 20px 24px;
+      margin: 28px 0;
+    }
+
+    .highlight-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      margin: 0 0 8px 0;
+    }
+
+    .highlight-card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0; }
+
+    h2 {
+      font-size: 1.55rem;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      margin: 44px 0 16px 0;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--surface-border);
+      color: var(--text-main);
+      scroll-margin-top: 24px;
+    }
+
+    h3 { font-size: 1.15rem; font-weight: 600; margin: 22px 0 10px 0; color: var(--text-main); }
+
+    p { margin-bottom: 14px; color: var(--text-muted); font-size: 0.98rem; }
+
+    ul, ol { margin: 10px 0 18px 22px; color: var(--text-muted); font-size: 0.98rem; }
+    li { margin-bottom: 8px; }
+    li strong { color: var(--text-main); }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.88em;
+      background: var(--code-bg);
+      border: 1px solid var(--surface-border);
+      padding: 2px 6px;
+      border-radius: 6px;
+      color: var(--accent-cyan);
+    }
+
+    .app-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+      margin: 18px 0 24px 0;
+    }
+
+    .app-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    .app-card a {
+      color: var(--accent-cyan);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
+
+    .app-card a:hover { text-decoration: underline; }
+
+    .app-card-pkg {
+      font-family: ui-monospace, monospace;
+      font-size: 0.82rem;
+      color: var(--text-subtle);
+      margin: 4px 0 10px 0;
+    }
+
+    footer {
+      margin-top: 56px;
+      padding-top: 24px;
+      border-top: 1px solid var(--surface-border);
+      font-size: 0.88rem;
+      color: var(--text-subtle);
+      text-align: center;
+    }
+
+    footer a { color: var(--accent-cyan); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="brand-eyebrow">Universal Offline AI (UOAI) Ecosystem</div>
+      <h1>Terms of Service</h1>
+      <p style="font-size: 1.05rem; color: var(--text-muted);">
+        Terms of Service governing your use of all <strong>Universal Offline AI (UOAI)</strong> Android applications: <strong>UOAI Provider</strong>, <strong>UOAI Chat</strong>, and <strong>UOAI Keyboard</strong>.
+      </p>
+      <div class="meta-bar">
+        <span><strong>Effective Date:</strong> November 23, 2026</span>
+        <span><strong>Last Updated:</strong> November 23, 2026</span>
+        <span><strong>Developer:</strong> UOAI Project Team</span>
+      </div>
+
+      <nav class="quick-nav" aria-label="Jump to section">
+        <a href="#apps">Apps Covered</a>
+        <a href="#license">License &amp; Models</a>
+        <a href="#ai-disclaimer">AI Accuracy</a>
+        <a href="#user-responsibilities">User Responsibilities</a>
+        <a href="#hardware">Device Resources</a>
+        <a href="#warranty">Disclaimers &amp; Liability</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="highlight-card">
+        <h3>Plain-Language Summary</h3>
+        <p>
+          UOAI apps are free, ad-free, 100% on-device offline tools. You own your data and prompts completely. Because AI models run locally and can make mistakes, you are responsible for verifying AI-generated text and complying with the licenses of any third-party model weights (such as Gemma) you download. The software is provided "as is" without warranty.
+        </p>
+      </div>
+
+      <section id="acceptance">
+        <h2>1. Acceptance of Terms</h2>
+        <p>
+          By downloading, installing, or using any Universal Offline AI (UOAI) application, you agree to be bound by these Terms of Service ("Terms") and the corresponding <a href="../privacy-policy.html" style="color: var(--accent-cyan);">Privacy Policy</a>. If you do not agree to these Terms, do not install or use the applications.
+        </p>
+      </section>
+
+      <section id="apps">
+        <h2>2. Applications Covered</h2>
+        <p>These Terms apply to the entire UOAI ecosystem. You may also view app-specific Terms of Service below:</p>
+
+        <div class="app-grid">
+          <div class="app-card">
+            <div style="font-weight: 700; font-size: 1.05rem;">UOAI Provider</div>
+            <div class="app-card-pkg">com.uoai.provider</div>
+            <p style="font-size: 0.88rem; margin-bottom: 10px;">Shared on-device LLM inference engine and loopback server (<code>127.0.0.1:8765</code>).</p>
+            <a href="../uoai-provider/terms/">Provider Terms &rarr;</a>
+          </div>
+          <div class="app-card">
+            <div style="font-weight: 700; font-size: 1.05rem;">UOAI Chat</div>
+            <div class="app-card-pkg">com.uoai.chat</div>
+            <p style="font-size: 0.88rem; margin-bottom: 10px;">Offline conversational AI client with local PDF &amp; document text extraction.</p>
+            <a href="../uoai-chat/terms/">Chat Terms &rarr;</a>
+          </div>
+          <div class="app-card">
+            <div style="font-weight: 700; font-size: 1.05rem;">UOAI Keyboard</div>
+            <div class="app-card-pkg">com.uoai.keyboard</div>
+            <p style="font-size: 0.88rem; margin-bottom: 10px;">Offline, ad-free Android keyboard with on-device Gemma writing &amp; reply tools.</p>
+            <a href="../uoai-keyboard/terms/">Keyboard Terms &rarr;</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="license">
+        <h2>3. License &amp; Third-Party AI Model Weights</h2>
+        <ul>
+          <li><strong>Software License:</strong> We grant you a personal, non-exclusive, revocable, royalty-free license to install and use the UOAI applications on compatible Android devices for lawful personal or commercial purposes.</li>
+          <li><strong>Third-Party Model Weights:</strong> UOAI applications do not bundle proprietary cloud AI services. When you download or import open-weight models (such as Google Gemma 3 / Gemma 4 models from Hugging Face or local storage), your use of those weights is subject to the respective model provider's license (for example, the <em>Gemma Terms of Use</em>). You are solely responsible for reviewing and complying with applicable model licenses.</li>
+          <li><strong>No Misuse:</strong> You agree not to use the applications for unlawful activities, malware distribution, or attempting to bypass Android OS security boundaries.</li>
+        </ul>
+      </section>
+
+      <section id="ai-disclaimer">
+        <h2>4. AI-Generated Output Disclaimer</h2>
+        <p>
+          Large Language Models executed on-device are probabilistic systems and may generate inaccurate, incomplete, outdated, or unintended responses ("hallucinations"):
+        </p>
+        <ul>
+          <li><strong>Verify Before Relying:</strong> You are solely responsible for reviewing and verifying all AI-generated answers, summaries, rewrites, emails, and code before acting on or sharing them.</li>
+          <li><strong>Not Professional Advice:</strong> Outputs from UOAI apps do <strong>not</strong> constitute medical, legal, financial, tax, or safety-critical professional advice.</li>
+        </ul>
+      </section>
+
+      <section id="user-responsibilities">
+        <h2>5. Your Content &amp; Local Security</h2>
+        <ul>
+          <li><strong>Full Ownership:</strong> Because all prompts, documents, chat turns, clipboard items, and keystrokes remain strictly on your device, we claim zero ownership over your input or output content.</li>
+          <li><strong>Client Approvals (UOAI Provider):</strong> You are responsible for reviewing and approving which third-party Android apps are granted access to your local UOAI Provider server. You may pause, cap, or revoke any client app at any time inside UOAI Provider.</li>
+          <li><strong>Document &amp; Input Rights:</strong> You are responsible for ensuring you have the right to process any documents or text you attach in UOAI Chat or rewrite with UOAI Keyboard.</li>
+        </ul>
+      </section>
+
+      <section id="hardware">
+        <h2>6. Device Resources, Performance &amp; Availability</h2>
+        <p>
+          Running on-device AI models requires significant RAM, storage space, and CPU/GPU/NPU compute. Performance, generation speed, and battery usage depend on your device hardware and selected model size. We do not guarantee that all models will run on every Android device, and Android's operating system may reclaim background services under low-memory conditions.
+        </p>
+      </section>
+
+      <section id="warranty">
+        <h2>7. Disclaimer of Warranties &amp; Limitation of Liability</h2>
+        <p>
+          THE UOAI APPLICATIONS ARE PROVIDED ON AN <strong>"AS IS"</strong> AND <strong>"AS AVAILABLE"</strong> BASIS, WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, ACCURACY, OR NON-INFRINGEMENT.
+        </p>
+        <p>
+          TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE UOAI PROJECT TEAM SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF DATA, PROFITS, OR BUSINESS INTERRUPTION ARISING OUT OF OR RELATED TO YOUR USE OF OR INABILITY TO USE THE APPLICATIONS OR ANY AI-GENERATED OUTPUTS.
+        </p>
+      </section>
+
+      <section id="changes">
+        <h2>8. Changes to These Terms</h2>
+        <p>
+          We may update these Terms of Service from time to time. Updated Terms will be posted at this URL with a revised "Last Updated" date. Continued use of the applications after changes take effect constitutes acceptance of the revised Terms.
+        </p>
+      </section>
+
+      <section id="contact">
+        <h2>9. Contact Us</h2>
+        <p>If you have questions about these Terms of Service, please contact us:</p>
+        <ul>
+          <li><strong>Project:</strong> Universal Offline AI (UOAI)</li>
+          <li><strong>Email:</strong> <a href="mailto:support@uoai.app" style="color: var(--accent-cyan);">support@uoai.app</a></li>
+          <li><strong>GitHub:</strong> <a href="https://github.com/kumodd/privacy-policy" target="_blank" rel="noopener noreferrer" style="color: var(--accent-cyan);">kumodd/privacy-policy</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Universal Offline AI (UOAI). All rights reserved.</p>
+      <p style="margin-top: 6px;">
+        <a href="../index.html">UOAI Hub</a> &bull;
+        <a href="../privacy-policy.html">Privacy Policy</a> &bull;
+        <a href="../uoai-provider/terms/">Provider Terms</a> &bull;
+        <a href="../uoai-chat/terms/">Chat Terms</a> &bull;
+        <a href="../uoai-keyboard/terms/">Keyboard Terms</a>
+      </p>
+    </footer>
+  </div>
+
+</body>
+</html>

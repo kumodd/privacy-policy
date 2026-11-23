@@ -16,7 +16,11 @@ When GitHub Pages is enabled on the `main` branch, the following URLs are availa
 | **UOAI Provider Privacy Policy** | `com.uoai.provider` | `https://kumodd.github.io/privacy-policy/uoai-provider/` | [`policies/uoai-provider.html`](policies/uoai-provider.html) |
 | **UOAI Chat Privacy Policy** | `com.uoai.chat` | `https://kumodd.github.io/privacy-policy/uoai-chat/` | [`policies/uoai-chat.html`](policies/uoai-chat.html) |
 | **UOAI Keyboard Privacy Policy** | `com.uoai.keyboard` | `https://kumodd.github.io/privacy-policy/uoai-keyboard/` | [`policies/uoai-keyboard.html`](policies/uoai-keyboard.html) |
-| **Ecosystem Combined Policy** | Both Apps | `https://kumodd.github.io/privacy-policy/privacy-policy.html` | [`privacy-policy.html`](privacy-policy.html) |
+| **Ecosystem Combined Policy** | All Apps | `https://kumodd.github.io/privacy-policy/privacy-policy.html` | [`privacy-policy.html`](privacy-policy.html) |
+| **Ecosystem Terms of Service** | All Apps | `https://kumodd.github.io/privacy-policy/terms/` | [`terms/index.html`](terms/index.html) |
+| **UOAI Provider Terms of Service** | `com.uoai.provider` | `https://kumodd.github.io/privacy-policy/uoai-provider/terms/` | [`uoai-provider/terms/index.html`](uoai-provider/terms/index.html) |
+| **UOAI Chat Terms of Service** | `com.uoai.chat` | `https://kumodd.github.io/privacy-policy/uoai-chat/terms/` | [`uoai-chat/terms/index.html`](uoai-chat/terms/index.html) |
+| **UOAI Keyboard Terms of Service** | `com.uoai.keyboard` | `https://kumodd.github.io/privacy-policy/uoai-keyboard/terms/` | [`uoai-keyboard/terms/index.html`](uoai-keyboard/terms/index.html) |
 
 ---
 
@@ -34,12 +38,17 @@ privacy-policy/
 │   ├── uoai-provider.html        # UOAI Provider standalone policy
 │   ├── uoai-chat.html            # UOAI Chat standalone policy
 │   └── uoai-keyboard.html        # UOAI Keyboard standalone policy
+├── terms/
+│   └── index.html                # Combined Terms of Service for all apps
 ├── uoai-provider/
-│   └── index.html                # Clean URL endpoint for /uoai-provider/
+│   ├── index.html                # Clean URL endpoint for /uoai-provider/
+│   └── terms/index.html          # Terms of Service for /uoai-provider/terms/
 ├── uoai-chat/
-│   └── index.html                # Clean URL endpoint for /uoai-chat/
+│   ├── index.html                # Clean URL endpoint for /uoai-chat/
+│   └── terms/index.html          # Terms of Service for /uoai-chat/terms/
 ├── uoai-keyboard/
-│   └── index.html                # Clean URL endpoint for /uoai-keyboard/
+│   ├── index.html                # Clean URL endpoint for /uoai-keyboard/
+│   └── terms/index.html          # Terms of Service for /uoai-keyboard/terms/
 └── README.md
 ```
 
