@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — UOAI Keyboard (com.uoai.keyboard)</title>
+  <meta name="description" content="Privacy Policy for UOAI Keyboard (com.uoai.keyboard) — 100% offline, ad-free Android keyboard with on-device Gemma AI writing & reply tools.">
+  <style>
+    :root {
+      --bg: #090e1a;
+      --surface: #10192e;
+      --surface-border: #1e293b;
+      --card-bg: #152238;
+      --card-border: #243553;
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --text-subtle: #64748b;
+      --accent-cyan: #38bdf8;
+      --accent-emerald: #34d399;
+      --accent-indigo: #818cf8;
+      --badge-bg: rgba(129, 140, 248, 0.14);
+      --badge-border: rgba(129, 140, 248, 0.38);
+      --badge-text: #818cf8;
+      --code-bg: #0b1322;
+      --table-border: #243553;
+      --max-width: 860px;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f8fafc;
+        --surface: #ffffff;
+        --surface-border: #e2e8f0;
+        --card-bg: #f1f5f9;
+        --card-border: #cbd5e1;
+        --text-main: #0f172a;
+        --text-muted: #475569;
+        --text-subtle: #64748b;
+        --accent-cyan: #0284c7;
+        --accent-emerald: #059669;
+        --accent-indigo: #4f46e5;
+        --badge-bg: rgba(79, 70, 229, 0.08);
+        --badge-border: rgba(79, 70, 229, 0.25);
+        --badge-text: #4f46e5;
+        --code-bg: #e2e8f0;
+        --table-border: #e2e8f0;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.68;
+      padding: 32px 16px 64px 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 24px 0 32px 0;
+      border-bottom: 1px solid var(--surface-border);
+      margin-bottom: 32px;
+    }
+
+    .brand-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      color: var(--badge-text);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+
+    .meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-top: 10px;
+    }
+
+    .meta-bar span strong {
+      color: var(--text-main);
+    }
+
+    .quick-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .quick-nav a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 12px;
+      transition: all 0.15s ease;
+    }
+
+    .quick-nav a:hover {
+      border-color: var(--accent-indigo);
+      color: var(--accent-indigo);
+      transform: translateY(-1px);
+    }
+
+    .highlight-card {
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      border-left: 4px solid var(--accent-indigo);
+      border-radius: 14px;
+      padding: 20px 24px;
+      margin: 28px 0;
+    }
+
+    .highlight-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--accent-indigo);
+      margin-bottom: 8px;
+    }
+
+    .highlight-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    h2 {
+      font-size: 1.55rem;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      margin: 44px 0 16px 0;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--surface-border);
+      color: var(--text-main);
+      scroll-margin-top: 24px;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 24px 0 10px 0;
+      color: var(--text-main);
+    }
+
+    p {
+      margin-bottom: 14px;
+      color: var(--text-muted);
+      font-size: 0.98rem;
+    }
+
+    ul, ol {
+      margin: 10px 0 18px 22px;
+      color: var(--text-muted);
+      font-size: 0.98rem;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    li strong {
+      color: var(--text-main);
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.88em;
+      background: var(--code-bg);
+      border: 1px solid var(--surface-border);
+      padding: 2px 6px;
+      border-radius: 6px;
+      color: var(--accent-cyan);
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 18px 0 24px 0;
+      border: 1px solid var(--table-border);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.92rem;
+    }
+
+    th {
+      background: var(--card-bg);
+      color: var(--text-main);
+      font-weight: 600;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--table-border);
+    }
+
+    td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--table-border);
+      color: var(--text-muted);
+      vertical-align: top;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    td strong {
+      color: var(--text-main);
+    }
+
+    footer {
+      margin-top: 56px;
+      padding-top: 24px;
+      border-top: 1px solid var(--surface-border);
+      font-size: 0.88rem;
+      color: var(--text-subtle);
+      text-align: center;
+    }
+
+    footer a {
+      color: var(--accent-cyan);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="brand-eyebrow">Google Play Store Disclosure &bull; com.uoai.keyboard</div>
+      <h1>UOAI Keyboard Privacy Policy</h1>
+      <p style="font-size: 1.05rem; color: var(--text-muted);">
+        Official privacy policy for <strong>UOAI Keyboard</strong> (<code>com.uoai.keyboard</code>) — a private, 100% offline Android keyboard with on-device Gemma AI writing &amp; reply tools.
+      </p>
+      <div class="meta-bar">
+        <span><strong>Package ID:</strong> <code>com.uoai.keyboard</code></span>
+        <span><strong>Effective Date:</strong> November 23, 2026</span>
+        <span><strong>Last Updated:</strong> November 23, 2026</span>
+        <span><strong>Developer:</strong> UOAI Project Team</span>
+      </div>
+
+      <nav class="quick-nav" aria-label="Jump to section">
+        <a href="#summary">Key Principles</a>
+        <a href="#keystrokes">Keystrokes &amp; Passwords</a>
+        <a href="#ai-assistant">On-Device AI</a>
+        <a href="#local-data">Local Features</a>
+        <a href="#permissions">Permissions</a>
+        <a href="#data-safety">Play Data Safety</a>
+        <a href="#user-control">User Controls</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Core Summary -->
+      <section id="summary">
+        <div class="highlight-card">
+          <h3>100% Offline Keyboard &bull; Zero Keystroke Logging &bull; Zero Ads &bull; Zero Cloud APIs</h3>
+          <p>
+            <strong>UOAI Keyboard</strong> is built on a strict privacy-by-architecture guarantee: <strong>your keystrokes, typed text, drafts, clipboard items, templates, voice input, and AI prompts never leave your physical device</strong>. We operate no cloud servers, make zero external internet calls, require no account login, and bundle zero advertising (<code>AD_ID</code> / AdMob) or analytics SDKs.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 1: Overview -->
+      <section id="overview">
+        <h2>1. Purpose of UOAI Keyboard</h2>
+        <p>
+          UOAI Keyboard is a fast, modern, ad-free Android Input Method Editor (IME) offering multilingual layouts, curated themes, mechanical switch sounds, clipboard history, quick text templates, offline voice typing, and an optional on-device AI Writing Assistant powered by the companion <strong>Universal Offline AI Provider</strong> (<code>com.uoai.provider</code>).
+        </p>
+      </section>
+
+      <!-- Section 2: Keystrokes, Incognito & Password Protection -->
+      <section id="keystrokes">
+        <h2>2. Keystroke, Incognito &amp; Password Field Protection</h2>
+        <ul>
+          <li><strong>Zero Remote Keystroke Transmission:</strong> Nothing you type is ever transmitted over the internet, uploaded to a cloud service, or shared with any third party.</li>
+          <li><strong>Automatic Password Field Protection:</strong> When an active text field is marked by Android as a password, PIN, or sensitive input field, UOAI Keyboard automatically pauses word learning, next-word suggestions, clipboard recording, and AI writing features.</li>
+          <li><strong>Incognito Mode:</strong> When an app requests incognito input (e.g., private browser tabs) or when you enable incognito mode, learning and history tracking are automatically paused.</li>
+        </ul>
+      </section>
+
+      <!-- Section 3: On-Device AI Writing Assistant -->
+      <section id="ai-assistant">
+        <h2>3. On-Device AI Writing Assistant (Loopback Only)</h2>
+        <p>
+          When you explicitly invoke one of the 13 writing or reply modes (Grammar Fix, Polish &amp; Clarity, Humanize, Enhance Prompt, Professional Email, Formal, Polite, Casual, Direct, Shorter, Bullets, Summary, or Smart Reply):
+        </p>
+        <ul>
+          <li>
+            <strong>Strict Localhost Loopback IPC:</strong> UOAI Keyboard communicates exclusively with your local <strong>Universal Offline AI Provider</strong> (<code>com.uoai.provider</code>) over Android's loopback interface (<code>http://127.0.0.1:8765</code>). Cleartext loopback access is restricted strictly to <code>127.0.0.1</code> and <code>localhost</code> via <code>uoai_network_security_config.xml</code>—no external servers are ever contacted.
+          </li>
+          <li>
+            <strong>One-Time OS-Verified Approval:</strong> Access to the local provider requires your explicit one-time approval. The issued access token is encrypted in the hardware-backed <strong>Android Keystore</strong>.
+          </li>
+          <li>
+            <strong>No Remote AI Processing:</strong> Selected text and generated rewrites are processed entirely on your phone's local hardware using Gemma 3 / Gemma 4 models hosted by UOAI Provider.
+          </li>
+        </ul>
+      </section>
+
+      <!-- Section 4: Local Productivity Data -->
+      <section id="local-data">
+        <h2>4. Local Data Stored on Your Device</h2>
+        <p>All keyboard features store their state strictly inside the app's private on-device storage sandbox:</p>
+        <ul>
+          <li><strong>Clipboard History:</strong> Copied text items are kept locally on your device so you can paste or pin them quickly. You can clear clipboard items at any time.</li>
+          <li><strong>Quick Text Templates &amp; Personal Dictionary:</strong> User-created templates, learned words, and language preferences stay strictly on-device.</li>
+          <li><strong>App Preferences:</strong> Selected theme, mechanical sound/haptic profile, active keyboard layouts, and your last-used AI writing tone are stored locally.</li>
+          <li><strong>Local JSON Backup &amp; Restore:</strong> Exporting or importing templates and preferences creates/reads a local JSON file solely at the location you choose via Android's system file picker.</li>
+          <li><strong>Offline Voice Typing:</strong> Audio captured when you explicitly tap the microphone button is processed locally on-device for speech-to-text input and is never stored as audio recordings or sent to our servers.</li>
+        </ul>
+      </section>
+
+      <!-- Section 5: Device Permissions -->
+      <section id="permissions">
+        <h2>5. Device Permissions &amp; Technical Justifications</h2>
+        <p>UOAI Keyboard requests only the minimal permissions needed for offline keyboard functionality:</p>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Permission</th>
+                <th>Type</th>
+                <th>Justification &amp; Privacy Boundary</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>android.permission.RECORD_AUDIO</code></td>
+                <td>Optional Runtime</td>
+                <td>
+                  <strong>Offline Voice Typing:</strong> Requested only when you tap the microphone key to dictate text. Audio is never saved or transmitted to external servers. All typing and AI features work normally if denied.
+                </td>
+              </tr>
+              <tr>
+                <td><code>android.permission.VIBRATE</code></td>
+                <td>Normal</td>
+                <td>
+                  <strong>Tactile Haptic Feedback:</strong> Provides customizable keypress vibration feedback while typing.
+                </td>
+              </tr>
+              <tr>
+                <td><code>android.permission.INTERNET</code></td>
+                <td>Normal</td>
+                <td>
+                  <strong>Localhost Loopback IPC Only:</strong> Required by Android to open local TCP sockets to <code>127.0.0.1:8765</code> to communicate with <code>com.uoai.provider</code> on the same device (enforced via <code>uoai_network_security_config.xml</code>). Zero external servers are contacted.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 6: Third-Party SDKs & Ads -->
+      <section id="third-party">
+        <h2>6. Zero Ads, Zero Analytics &amp; Zero Third-Party Sharing</h2>
+        <ul>
+          <li><strong>Zero Advertising SDKs:</strong> Completely ad-free. <code>AD_ID</code> and AdMob SDKs are completely removed from the application.</li>
+          <li><strong>Zero Analytics / Telemetry SDKs:</strong> No Firebase Analytics, Google Analytics, Mixpanel, Segment, or behavioral trackers.</li>
+          <li><strong>Zero Crash Telemetry SDKs:</strong> No third-party crash reporting SDKs (such as Crashlytics or Sentry).</li>
+          <li><strong>Zero Data Sharing or Profiling:</strong> We never collect, sell, rent, or share any user data with third parties.</li>
+        </ul>
+      </section>
+
+      <!-- Section 7: Google Play Data Safety -->
+      <section id="data-safety">
+        <h2>7. Google Play Data Safety Compliance</h2>
+        <p>Declarations aligned with the Google Play Console Data Safety form for <code>com.uoai.keyboard</code>:</p>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Play Console Question</th>
+                <th>Declared Answer</th>
+                <th>Explanation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Does your app collect or share any of the required user data types?</td>
+                <td><strong>No</strong></td>
+                <td>No keystrokes, messages, clipboard items, audio, or personal data are collected or shared.</td>
+              </tr>
+              <tr>
+                <td>Is all user data processed locally on-device?</td>
+                <td><strong>Yes</strong></td>
+                <td>All typing, clipboard, dictionary, templates, and localhost AI inference (<code>127.0.0.1:8765</code>) stay strictly on the user's device.</td>
+              </tr>
+              <tr>
+                <td>Does the app contain ads?</td>
+                <td><strong>No</strong></td>
+                <td><code>AD_ID</code> and AdMob SDKs are completely removed; the app is 100% free and ad-free.</td>
+              </tr>
+              <tr>
+                <td>Can users delete their locally stored data?</td>
+                <td><strong>Yes (Direct User Control)</strong></td>
+                <td>Users can clear clipboard history/templates in-app, wipe all storage in Android Settings, or uninstall the app.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 8: User Controls & Deletion -->
+      <section id="user-control">
+        <h2>8. Data Retention &amp; How to Delete Your Data</h2>
+        <p>Because all data resides exclusively in your device's private application storage, you have complete control at all times:</p>
+        <ol>
+          <li><strong>In-App Controls:</strong> Clear clipboard history, delete saved quick text templates, or reset preferences directly within UOAI Keyboard settings.</li>
+          <li><strong>Revoke AI Provider Access:</strong> Revoke UOAI Keyboard's local loopback token anytime inside UOAI Provider &rarr; <em>Clients</em>.</li>
+          <li><strong>Full Data Wipe:</strong> Go to <strong>Settings &rarr; Apps &rarr; UOAI Keyboard &rarr; Storage &rarr; Clear Storage / Clear Data</strong>.</li>
+          <li><strong>Uninstallation:</strong> Uninstalling UOAI Keyboard permanently deletes all private app data, dictionary entries, templates, and Keystore tokens from your device.</li>
+        </ol>
+      </section>
+
+      <!-- Section 9: Children's Privacy -->
+      <section id="children">
+        <h2>9. Children's Privacy</h2>
+        <p>
+          UOAI Keyboard is rated for Everyone and does not collect, transmit, or store personal information from anyone, including children under the age of 13. Because all processing is strictly offline and on-device, it complies with COPPA and GDPR.
+        </p>
+      </section>
+
+      <!-- Section 10: Policy Updates -->
+      <section id="updates">
+        <h2>10. Changes to This Privacy Policy</h2>
+        <p>
+          We may update this Privacy Policy from time to time to reflect app updates or regulatory requirements. Any revisions will be published at this URL with an updated "Last Updated" date.
+        </p>
+      </section>
+
+      <!-- Section 11: Contact -->
+      <section id="contact">
+        <h2>11. Contact Us</h2>
+        <p>If you have any questions, feedback, or privacy inquiries regarding UOAI Keyboard, please contact us:</p>
+        <ul>
+          <li><strong>Project:</strong> Universal Offline AI (UOAI) Keyboard</li>
+          <li><strong>Email:</strong> <a href="mailto:support@uoai.app" style="color: var(--accent-cyan);">support@uoai.app</a></li>
+          <li><strong>GitHub:</strong> <a href="https://github.com/kumodd/privacy-policy" target="_blank" rel="noopener noreferrer" style="color: var(--accent-cyan);">kumodd/privacy-policy</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Universal Offline AI (UOAI). All rights reserved.</p>
+      <p style="margin-top: 6px;">
+        <a href="../index.html">UOAI Hub</a> &bull;
+        <a href="../policies/uoai-provider.html">UOAI Provider Policy</a> &bull;
+        <a href="../policies/uoai-chat.html">UOAI Chat Policy</a> &bull;
+        <a href="../privacy-policy.html">Ecosystem Policy</a>
+      </p>
+    </footer>
+  </div>
+
+</body>
+</html>

@@ -15,6 +15,7 @@ When GitHub Pages is enabled on the `main` branch, the following URLs are availa
 | **AI Implementation Prompt** | Existing Android Apps | `https://kumodd.github.io/privacy-policy/ai-prompt/` | [`ai-prompt/index.html`](ai-prompt/index.html) |
 | **UOAI Provider Privacy Policy** | `com.uoai.provider` | `https://kumodd.github.io/privacy-policy/uoai-provider/` | [`policies/uoai-provider.html`](policies/uoai-provider.html) |
 | **UOAI Chat Privacy Policy** | `com.uoai.chat` | `https://kumodd.github.io/privacy-policy/uoai-chat/` | [`policies/uoai-chat.html`](policies/uoai-chat.html) |
+| **UOAI Keyboard Privacy Policy** | `com.uoai.keyboard` | `https://kumodd.github.io/privacy-policy/uoai-keyboard/` | [`policies/uoai-keyboard.html`](policies/uoai-keyboard.html) |
 | **Ecosystem Combined Policy** | Both Apps | `https://kumodd.github.io/privacy-policy/privacy-policy.html` | [`privacy-policy.html`](privacy-policy.html) |
 
 ---
@@ -31,11 +32,14 @@ privacy-policy/
 │   └── index.html                # Copy-paste AI coding prompts for existing Android apps
 ├── policies/                     # Dedicated individual app policies
 │   ├── uoai-provider.html        # UOAI Provider standalone policy
-│   └── uoai-chat.html            # UOAI Chat standalone policy
+│   ├── uoai-chat.html            # UOAI Chat standalone policy
+│   └── uoai-keyboard.html        # UOAI Keyboard standalone policy
 ├── uoai-provider/
 │   └── index.html                # Clean URL endpoint for /uoai-provider/
 ├── uoai-chat/
 │   └── index.html                # Clean URL endpoint for /uoai-chat/
+├── uoai-keyboard/
+│   └── index.html                # Clean URL endpoint for /uoai-keyboard/
 └── README.md
 ```
 
