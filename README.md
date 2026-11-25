@@ -22,6 +22,13 @@ When GitHub Pages is enabled on the `main` branch, the following URLs are availa
 | **UOAI Chat Terms of Service** | `com.uoai.chat` | `https://kumodd.github.io/privacy-policy/uoai-chat/terms/` | [`uoai-chat/terms/index.html`](uoai-chat/terms/index.html) |
 | **UOAI Keyboard Terms of Service** | `com.uoai.keyboard` | `https://kumodd.github.io/privacy-policy/uoai-keyboard/terms/` | [`uoai-keyboard/terms/index.html`](uoai-keyboard/terms/index.html) |
 
+### Other Independent Apps
+
+| App / Document | Package ID | Live URL (GitHub Pages) | Local File |
+|---|---|---|---|
+| **Wireless Mic Recorder Privacy Policy** | `com.cleanrecorder.wirelessmic` | `https://kumodd.github.io/privacy-policy/wireless-mic-recorder/` | [`wireless-mic-recorder/index.html`](wireless-mic-recorder/index.html) |
+| **Wireless Mic Recorder Terms of Service** | `com.cleanrecorder.wirelessmic` | `https://kumodd.github.io/privacy-policy/wireless-mic-recorder/terms/` | [`wireless-mic-recorder/terms/index.html`](wireless-mic-recorder/terms/index.html) |
+
 ---
 
 ## 📁 Repository Structure
@@ -49,6 +56,9 @@ privacy-policy/
 ├── uoai-keyboard/
 │   ├── index.html                # Clean URL endpoint for /uoai-keyboard/
 │   └── terms/index.html          # Terms of Service for /uoai-keyboard/terms/
+├── wireless-mic-recorder/
+│   ├── index.html                # Standalone Privacy Policy for /wireless-mic-recorder/
+│   └── terms/index.html          # Standalone Terms of Service for /wireless-mic-recorder/terms/
 └── README.md
 ```
 

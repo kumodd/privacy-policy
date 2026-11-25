@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Wireless Mic Recorder (com.cleanrecorder.wirelessmic)</title>
+  <meta name="description" content="Privacy Policy for Wireless Mic Recorder (com.cleanrecorder.wirelessmic) by Clean Recorder Studio — privacy-first, local-network audio and video recording app.">
+  <style>
+    :root {
+      --bg: #0b0f17;
+      --surface: #121826;
+      --surface-border: #20293d;
+      --card-bg: #171f30;
+      --card-border: #28344e;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --text-subtle: #6b7280;
+      --accent-teal: #2dd4bf;
+      --accent-sky: #38bdf8;
+      --badge-bg: rgba(45, 212, 191, 0.12);
+      --badge-border: rgba(45, 212, 191, 0.35);
+      --badge-text: #2dd4bf;
+      --code-bg: #0d121d;
+      --table-border: #263147;
+      --max-width: 860px;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f8fafc;
+        --surface: #ffffff;
+        --surface-border: #e2e8f0;
+        --card-bg: #f1f5f9;
+        --card-border: #cbd5e1;
+        --text-main: #0f172a;
+        --text-muted: #475569;
+        --text-subtle: #64748b;
+        --accent-teal: #0d9488;
+        --accent-sky: #0284c7;
+        --badge-bg: rgba(13, 148, 136, 0.08);
+        --badge-border: rgba(13, 148, 136, 0.25);
+        --badge-text: #0d9488;
+        --code-bg: #e2e8f0;
+        --table-border: #e2e8f0;
+      }
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.68;
+      padding: 32px 16px 64px 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container { max-width: var(--max-width); margin: 0 auto; }
+
+    header {
+      padding: 24px 0 32px 0;
+      border-bottom: 1px solid var(--surface-border);
+      margin-bottom: 32px;
+    }
+
+    .brand-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      color: var(--badge-text);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+
+    .meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-top: 10px;
+    }
+
+    .meta-bar span strong { color: var(--text-main); }
+
+    .quick-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .quick-nav a {
+      display: inline-flex;
+      align-items: center;
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 12px;
+      transition: all 0.15s ease;
+    }
+
+    .quick-nav a:hover {
+      border-color: var(--accent-teal);
+      color: var(--accent-teal);
+      transform: translateY(-1px);
+    }
+
+    .highlight-card {
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      border-left: 4px solid var(--accent-teal);
+      border-radius: 14px;
+      padding: 20px 24px;
+      margin: 28px 0;
+    }
+
+    .highlight-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--accent-teal);
+      margin: 0 0 8px 0;
+    }
+
+    .highlight-card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0; }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      margin: 42px 0 14px 0;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--surface-border);
+      color: var(--text-main);
+      scroll-margin-top: 24px;
+    }
+
+    h3 { font-size: 1.15rem; font-weight: 600; margin: 22px 0 10px 0; color: var(--text-main); }
+
+    p { margin-bottom: 14px; color: var(--text-muted); font-size: 0.98rem; }
+    ul, ol { margin: 10px 0 18px 22px; color: var(--text-muted); font-size: 0.98rem; }
+    li { margin-bottom: 8px; }
+    li strong { color: var(--text-main); }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.88em;
+      background: var(--code-bg);
+      border: 1px solid var(--surface-border);
+      padding: 2px 6px;
+      border-radius: 6px;
+      color: var(--accent-teal);
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 18px 0 24px 0;
+      border: 1px solid var(--table-border);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.92rem;
+    }
+
+    th {
+      background: var(--card-bg);
+      color: var(--text-main);
+      font-weight: 600;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--table-border);
+    }
+
+    td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--table-border);
+      color: var(--text-muted);
+      vertical-align: top;
+    }
+
+    tr:last-child td { border-bottom: none; }
+    td strong { color: var(--text-main); }
+
+    footer {
+      margin-top: 56px;
+      padding-top: 24px;
+      border-top: 1px solid var(--surface-border);
+      font-size: 0.88rem;
+      color: var(--text-subtle);
+      text-align: center;
+    }
+
+    footer a { color: var(--accent-teal); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="brand-eyebrow">Clean Recorder Studio &bull; com.cleanrecorder.wirelessmic</div>
+      <h1>Wireless Mic Recorder Privacy Policy</h1>
+      <p style="font-size: 1.05rem; color: var(--text-muted);">
+        <strong>Kumod (Clean Recorder Studio)</strong> built <strong>Wireless Mic Recorder</strong> (<code>com.cleanrecorder.wirelessmic</code>) as a privacy-first, local-network audio and video recording application. This Privacy Policy explains how information is handled when you use our app.
+      </p>
+      <div class="meta-bar">
+        <span><strong>Package ID:</strong> <code>com.cleanrecorder.wirelessmic</code></span>
+        <span><strong>Effective Date:</strong> November 25, 2026</span>
+        <span><strong>Platform:</strong> Android 8.0+ (API 26&ndash;36)</span>
+        <span><strong>Publisher:</strong> Kumod (Clean Recorder Studio)</span>
+      </div>
+
+      <nav class="quick-nav" aria-label="Jump to section">
+        <a href="#no-collection">1. No Data Collection</a>
+        <a href="#local-encryption">2. Local Processing &amp; Encryption</a>
+        <a href="#permissions">3. Device Permissions</a>
+        <a href="#third-party">4. Third-Party Services</a>
+        <a href="#storage-retention">5. Storage &amp; Deletion</a>
+        <a href="#children">6. Children's Privacy</a>
+        <a href="#contact">8. Contact Us</a>
+        <a href="./terms/">Terms of Service &rarr;</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="highlight-card">
+        <h3>100% Local Network &bull; Mutual ECDH + AES-256-GCM &bull; Zero Cloud Servers &bull; Zero Ads</h3>
+        <p>
+          Wireless Mic Recorder requires <strong>no user accounts</strong>, runs <strong>no backend servers</strong>, includes <strong>zero third-party analytics or ad SDKs</strong>, and transmits peer-to-peer audio strictly over your local Wi-Fi, Mobile Hotspot, or Wi-Fi Direct connection with mutual 6-digit ECDH (P-256) key exchange and AES-256-GCM encryption.
+        </p>
+      </div>
+
+      <section id="no-collection">
+        <h2>1. No Personal Data Collection</h2>
+        <p>
+          We do <strong>not</strong> collect, store, sell, rent, or transmit any personal information, audio recordings, video recordings, contacts, location data, or usage analytics to our servers or any third party. The app requires <strong>no user account or sign-in</strong> and functions completely offline over your local Wi-Fi network or Mobile Hotspot.
+        </p>
+      </section>
+
+      <section id="local-encryption">
+        <h2>2. Local Processing &amp; Encryption</h2>
+        <ul>
+          <li><strong>Audio &amp; Video:</strong> All camera video, microphone voice, live DSP mixing, and optional Phone 2 internal device audio are processed exclusively on your devices.</li>
+          <li><strong>Local Peer-to-Peer Transfer:</strong> Audio transmitted between your connected devices travels only across your local Wi-Fi, Hotspot, or Wi-Fi Direct network and is protected with mutual 6-digit ECDH (P-256) pairing and <strong>AES-256-GCM</strong> authenticated encryption.</li>
+          <li><strong>On-Device Storage:</strong> Recorded MP4 videos and lossless WAV safety backups remain privately inside the app's local storage on your device until you explicitly choose to export, share, or delete them.</li>
+        </ul>
+      </section>
+
+      <section id="permissions">
+        <h2>3. Device Permissions &amp; Technical Justifications</h2>
+        <p>The app requests only the Android permissions necessary for its core features:</p>
+
+        <ul>
+          <li><strong>Camera:</strong> To record video in Video Recorder mode.</li>
+          <li><strong>Microphone:</strong> To capture live speech on the Wireless Microphone device (and optional explicit fallback on the Recorder device).</li>
+          <li><strong>Bluetooth &amp; Nearby Wi-Fi Devices:</strong> Strictly to discover and pair your own nearby devices over local connections. We do not track or collect GPS or location data (<code>neverForLocation</code> on Android 12+).</li>
+          <li><strong>Internal Audio Capture (MediaProjection):</strong> Requested only when you explicitly enable "Internal Phone Audio" on Phone 2 to stream backing tracks or media into Phone 1's Live Audio Mixer, and only after you approve Android's system consent prompt.</li>
+          <li><strong>Notifications &amp; Foreground Services:</strong> To display an active indicator while audio streaming or video recording is in progress.</li>
+        </ul>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Android Permission</th>
+                <th>Purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>CAMERA</code></td>
+                <td>Captures live video preview and hardware-encoded MP4 video on Phone 1 (Recorder Phone) in Video Recorder mode.</td>
+              </tr>
+              <tr>
+                <td><code>RECORD_AUDIO</code> / <code>MODIFY_AUDIO_SETTINGS</code></td>
+                <td>Captures microphone voice on Phone 2 (Wireless Microphone) and optional explicit fallback microphone on Phone 1; manages low-latency PA/ear monitoring playback.</td>
+              </tr>
+              <tr>
+                <td><code>BLUETOOTH_SCAN</code>, <code>BLUETOOTH_ADVERTISE</code>, <code>BLUETOOTH_CONNECT</code><br><em>(legacy <code>BLUETOOTH</code>, <code>BLUETOOTH_ADMIN</code>, <code>ACCESS_FINE_LOCATION</code> on Android &le; 12)</em></td>
+                <td>Discovers nearby Wireless Mic Recorder devices and performs mutual 6-digit pairing. Location data is <strong>never</strong> collected, stored, or transmitted (<code>neverForLocation</code> on Android 12+).</td>
+              </tr>
+              <tr>
+                <td><code>INTERNET</code>, <code>ACCESS_NETWORK_STATE</code>, <code>ACCESS_WIFI_STATE</code>, <code>CHANGE_WIFI_STATE</code>, <code>CHANGE_NETWORK_STATE</code>, <code>NEARBY_WIFI_DEVICES</code></td>
+                <td>Streams encrypted live audio and clock-sync packets strictly over your local Wi-Fi router, Mobile Hotspot, or Wi-Fi Direct link. No internet access is required and no data is sent to external servers.</td>
+              </tr>
+              <tr>
+                <td><code>FOREGROUND_SERVICE</code> (<code>microphone</code>, <code>camera</code>, <code>connectedDevice</code>, <code>mediaProjection</code>) &amp; <code>WAKE_LOCK</code></td>
+                <td>Keeps live wireless audio transmission, camera video recording, live audio mixing, and optional Phone 2 internal audio capture running reliably without OS interruption, while showing a visible system notification.</td>
+              </tr>
+              <tr>
+                <td><code>POST_NOTIFICATIONS</code></td>
+                <td>Displays the required ongoing notification when microphone streaming, camera recording, or internal audio sharing is active.</td>
+              </tr>
+              <tr>
+                <td><code>VIBRATE</code></td>
+                <td>Provides haptic alerts if the wireless microphone connection drops during recording.</td>
+              </tr>
+              <tr>
+                <td><code>WRITE_EXTERNAL_STORAGE</code> / <code>READ_EXTERNAL_STORAGE</code><br><em>(Android &le; 9 only)</em></td>
+                <td>Exports user-selected MP4 videos or WAV safety backups to public <code>Movies/</code> or <code>Music/</code> folders when explicitly triggered by the user.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="third-party">
+        <h2>4. Third-Party Services &amp; Links</h2>
+        <ul>
+          <li><strong>No Analytics or Advertising SDKs:</strong> The app contains <strong>no</strong> third-party advertising networks, analytics trackers, or crash-reporting SDKs that exfiltrate user data.</li>
+          <li><strong>Google Play Store Link:</strong> In the Free edition (1 wireless microphone), tapping the optional Pro upgrade prompt (<code>com.cleanrecorder.wirelessmic.pro</code>, up to 4 simultaneous wireless microphones) opens the Google Play Store app/website, which is governed by Google's Privacy Policy.</li>
+        </ul>
+      </section>
+
+      <section id="storage-retention">
+        <h2>5. Local Storage, Data Retention &amp; Deletion</h2>
+        <p>All recordings and pairing keys are stored solely on your device (with <code>allowBackup="false"</code>):</p>
+        <ul>
+          <li><strong>Private In-App Recordings:</strong> <code>filesDir/recordings/</code> (MP4 video takes) and <code>filesDir/safety_audio/</code> (lossless WAV safety backups and live stereo mixdowns).</li>
+          <li><strong>Local Preferences:</strong> Device display name, audio quality/video format/mixer UI style preferences, and locally stored trusted peer ECDH keys (<code>SharedPreferences</code>).</li>
+          <li><strong>User-Initiated Exports:</strong> Copied to <code>Movies/WirelessMicRecorder</code>, <code>Music/WirelessMicSafety</code>, or a user-chosen folder via Android Storage Access Framework only when you tap <strong>Export</strong> or <strong>Share</strong>.</li>
+        </ul>
+        <p>You have full control at all times:</p>
+        <ul>
+          <li>Delete individual video takes or safety WAV backups directly inside the app.</li>
+          <li>Clear paired device keys anytime via <strong>Settings &rarr; Forget Paired Phones</strong>.</li>
+          <li>Uninstalling the app permanently removes all private in-app recordings and settings.</li>
+        </ul>
+      </section>
+
+      <section id="children">
+        <h2>6. Children's Privacy</h2>
+        <p>
+          Wireless Mic Recorder is a general-audience audio/video creation tool not directed to children under 13. Because we do not collect personal data from any users, we do not knowingly collect personal information from children.
+        </p>
+      </section>
+
+      <section id="changes">
+        <h2>7. Changes to This Policy</h2>
+        <p>
+          We may update this Privacy Policy if app features or legal requirements change. Updates will be posted on this page with a revised Effective Date.
+        </p>
+      </section>
+
+      <section id="contact">
+        <h2>8. Contact Us</h2>
+        <p>If you have any questions about this Privacy Policy, please contact us at:</p>
+        <ul>
+          <li><strong>Developer:</strong> Kumod (Clean Recorder Studio)</li>
+          <li><strong>Email:</strong> <a href="mailto:kumod353@gmail.com" style="color: var(--accent-teal);">kumod353@gmail.com</a></li>
+          <li><strong>Website:</strong> <a href="https://kumodd.github.io/privacy-policy/wireless-mic-recorder/" style="color: var(--accent-teal);">https://kumodd.github.io/privacy-policy/wireless-mic-recorder/</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Kumod (Clean Recorder Studio). All rights reserved.</p>
+      <p style="margin-top: 6px;"><a href="./terms/">Terms of Service</a></p>
+    </footer>
+  </div>
+
+</body>
+</html>

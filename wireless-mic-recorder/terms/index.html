@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service — Wireless Mic Recorder (com.cleanrecorder.wirelessmic)</title>
+  <meta name="description" content="Terms of Service for Wireless Mic Recorder (com.cleanrecorder.wirelessmic) by Clean Recorder Studio.">
+  <style>
+    :root {
+      --bg: #0b0f17;
+      --surface: #121826;
+      --surface-border: #20293d;
+      --card-bg: #171f30;
+      --card-border: #28344e;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --text-subtle: #6b7280;
+      --accent-teal: #2dd4bf;
+      --badge-bg: rgba(45, 212, 191, 0.12);
+      --badge-border: rgba(45, 212, 191, 0.35);
+      --badge-text: #2dd4bf;
+      --code-bg: #0d121d;
+      --max-width: 860px;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f8fafc;
+        --surface: #ffffff;
+        --surface-border: #e2e8f0;
+        --card-bg: #f1f5f9;
+        --card-border: #cbd5e1;
+        --text-main: #0f172a;
+        --text-muted: #475569;
+        --text-subtle: #64748b;
+        --accent-teal: #0d9488;
+        --badge-bg: rgba(13, 148, 136, 0.08);
+        --badge-border: rgba(13, 148, 136, 0.25);
+        --badge-text: #0d9488;
+        --code-bg: #e2e8f0;
+      }
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.68;
+      padding: 32px 16px 64px 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container { max-width: var(--max-width); margin: 0 auto; }
+
+    header {
+      padding: 24px 0 32px 0;
+      border-bottom: 1px solid var(--surface-border);
+      margin-bottom: 32px;
+    }
+
+    .brand-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      color: var(--badge-text);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+
+    .meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-top: 10px;
+    }
+
+    .meta-bar span strong { color: var(--text-main); }
+
+    .quick-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .quick-nav a {
+      display: inline-flex;
+      align-items: center;
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 12px;
+      transition: all 0.15s ease;
+    }
+
+    .quick-nav a:hover {
+      border-color: var(--accent-teal);
+      color: var(--accent-teal);
+      transform: translateY(-1px);
+    }
+
+    .highlight-card {
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      border-left: 4px solid var(--accent-teal);
+      border-radius: 14px;
+      padding: 20px 24px;
+      margin: 28px 0;
+    }
+
+    .highlight-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--accent-teal);
+      margin: 0 0 8px 0;
+    }
+
+    .highlight-card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0; }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      margin: 40px 0 14px 0;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--surface-border);
+      color: var(--text-main);
+      scroll-margin-top: 24px;
+    }
+
+    p { margin-bottom: 14px; color: var(--text-muted); font-size: 0.98rem; }
+    ul { margin: 10px 0 18px 22px; color: var(--text-muted); font-size: 0.98rem; }
+    li { margin-bottom: 8px; }
+    li strong { color: var(--text-main); }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.88em;
+      background: var(--code-bg);
+      border: 1px solid var(--surface-border);
+      padding: 2px 6px;
+      border-radius: 6px;
+      color: var(--accent-teal);
+    }
+
+    footer {
+      margin-top: 56px;
+      padding-top: 24px;
+      border-top: 1px solid var(--surface-border);
+      font-size: 0.88rem;
+      color: var(--text-subtle);
+      text-align: center;
+    }
+
+    footer a { color: var(--accent-teal); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="brand-eyebrow">Clean Recorder Studio &bull; com.cleanrecorder.wirelessmic</div>
+      <h1>Wireless Mic Recorder Terms of Service</h1>
+      <p style="font-size: 1.05rem; color: var(--text-muted);">
+        By downloading, installing, or using <strong>Wireless Mic Recorder</strong> (<code>com.cleanrecorder.wirelessmic</code> or Pro edition <code>com.cleanrecorder.wirelessmic.pro</code>), you agree to these Terms of Service. If you do not agree, do not use the app.
+      </p>
+      <div class="meta-bar">
+        <span><strong>Package ID:</strong> <code>com.cleanrecorder.wirelessmic</code></span>
+        <span><strong>Effective Date:</strong> November 25, 2026</span>
+        <span><strong>Governing Law:</strong> India</span>
+        <span><strong>Publisher:</strong> Kumod (Clean Recorder Studio)</span>
+      </div>
+
+      <nav class="quick-nav" aria-label="Jump to section">
+        <a href="#license">1. License</a>
+        <a href="#editions">2. Free vs. Pro</a>
+        <a href="#consent">3. Consent &amp; Responsibilities</a>
+        <a href="#backups">4. Local Storage &amp; Backups</a>
+        <a href="#warranty">5. Warranty &amp; Liability</a>
+        <a href="#ip">7. Intellectual Property</a>
+        <a href="#contact">9. Contact</a>
+        <a href="../">&larr; Privacy Policy</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="highlight-card">
+        <h3>Key Terms Summary</h3>
+        <p>
+          You retain 100% ownership of all original audio and video you create. You are responsible for obtaining recording consent where legally required, backing up exported files, and ensuring copyright compliance for captured internal audio. The app is provided "as is."
+        </p>
+      </div>
+
+      <section id="license">
+        <h2>1. License to Use</h2>
+        <p>
+          We grant you a limited, non-exclusive, non-transferable, revocable license to install and use Wireless Mic Recorder on compatible Android devices for personal or commercial content creation in accordance with these Terms and Google Play policies.
+        </p>
+      </section>
+
+      <section id="editions">
+        <h2>2. Free vs. Pro Editions</h2>
+        <ul>
+          <li><strong>Free Edition (<code>com.cleanrecorder.wirelessmic</code>):</strong> Supports connecting one (1) wireless microphone device along with Live Audio Mixer, Video Recorder, Phone 2 internal audio streaming, and lossless safety WAV backup.</li>
+          <li><strong>Pro Edition (<code>com.cleanrecorder.wirelessmic.pro</code>):</strong> Multi-microphone connectivity (up to 4 simultaneous wireless microphones) is offered separately via Google Play. Purchases and refunds for paid apps are governed by Google Play's billing and refund policies.</li>
+        </ul>
+      </section>
+
+      <section id="consent">
+        <h2>3. User Responsibilities &amp; Recording Consent</h2>
+        <p>You are solely responsible for all audio and video recorded, mixed, streamed, or exported using the app. You agree that you will:</p>
+        <ul>
+          <li>Obtain all legally required consent from any individuals whose voice or likeness you record, in compliance with local wiretapping, privacy, and recording laws.</li>
+          <li>Respect copyright and intellectual property laws when capturing or streaming internal device audio, music, or backing tracks.</li>
+          <li>Not reverse engineer, decompile, redistribute, or misuse the app in violation of applicable law.</li>
+        </ul>
+      </section>
+
+      <section id="backups">
+        <h2>4. Local Storage &amp; Backups</h2>
+        <p>
+          All recordings are stored locally on your device. While the app includes a lossless WAV safety backup feature to help protect against Wi-Fi dropouts, you are solely responsible for exporting and backing up important recordings. We are not responsible for lost files due to device failure, low storage, battery depletion, OS termination, or app uninstallation.
+        </p>
+      </section>
+
+      <section id="warranty">
+        <h2>5. Disclaimer of Warranties</h2>
+        <p>
+          Wireless Mic Recorder is provided <strong>"AS IS"</strong> and <strong>"AS AVAILABLE"</strong> without warranties of any kind, express or implied. Wireless audio performance depends on local Wi-Fi/Hotspot signal quality, device hardware, and Android OS behavior; we do not guarantee uninterrupted, zero-latency, or error-free recording in all environments.
+        </p>
+
+        <h2>6. Limitation of Liability</h2>
+        <p>
+          To the maximum extent permitted by applicable law, <strong>Kumod (Clean Recorder Studio)</strong> shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of data, recordings, revenue, or profits arising from your use of or inability to use the app.
+        </p>
+      </section>
+
+      <section id="ip">
+        <h2>7. Intellectual Property</h2>
+        <p>
+          All app code, UI designs, graphics, logos, and trademarks associated with Wireless Mic Recorder remain the property of <strong>Kumod (Clean Recorder Studio)</strong>. You retain <strong>100% ownership</strong> of all original audio and video content you create using the app.
+        </p>
+      </section>
+
+      <section id="law">
+        <h2>8. Changes &amp; Governing Law</h2>
+        <p>
+          We may modify these Terms from time to time. Continued use of the app after updates constitutes acceptance of the revised Terms. These Terms are governed by the laws of <strong>India</strong>, without regard to conflict-of-law principles.
+        </p>
+      </section>
+
+      <section id="contact">
+        <h2>9. Contact</h2>
+        <p>For support or legal inquiries, contact:</p>
+        <ul>
+          <li><strong>Developer:</strong> Kumod (Clean Recorder Studio)</li>
+          <li><strong>Email:</strong> <a href="mailto:kumod353@gmail.com" style="color: var(--accent-teal);">kumod353@gmail.com</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Kumod (Clean Recorder Studio). All rights reserved.</p>
+      <p style="margin-top: 6px;"><a href="../">Privacy Policy</a></p>
+    </footer>
+  </div>
+
+</body>
+</html>
