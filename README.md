@@ -26,6 +26,8 @@ When GitHub Pages is enabled on the `main` branch, the following URLs are availa
 
 | App / Document | Package ID | Live URL (GitHub Pages) | Local File |
 |---|---|---|---|
+| **Sunbo — Your 2nd Mind Privacy Policy** | `com.personalai.primary` | `https://kumodd.github.io/privacy-policy/sunbo/` | [`sunbo/index.html`](sunbo/index.html) |
+| **Sunbo — Your 2nd Mind Terms of Service** | `com.personalai.primary` | `https://kumodd.github.io/privacy-policy/sunbo/terms/` | [`sunbo/terms/index.html`](sunbo/terms/index.html) |
 | **Wireless Mic Recorder Privacy Policy** | `com.cleanrecorder.wirelessmic` | `https://kumodd.github.io/privacy-policy/wireless-mic-recorder/` | [`wireless-mic-recorder/index.html`](wireless-mic-recorder/index.html) |
 | **Wireless Mic Recorder Terms of Service** | `com.cleanrecorder.wirelessmic` | `https://kumodd.github.io/privacy-policy/wireless-mic-recorder/terms/` | [`wireless-mic-recorder/terms/index.html`](wireless-mic-recorder/terms/index.html) |
 
@@ -56,6 +58,9 @@ privacy-policy/
 ├── uoai-keyboard/
 │   ├── index.html                # Clean URL endpoint for /uoai-keyboard/
 │   └── terms/index.html          # Terms of Service for /uoai-keyboard/terms/
+├── sunbo/
+│   ├── index.html                # Standalone Privacy Policy for /sunbo/
+│   └── terms/index.html          # Standalone Terms of Service for /sunbo/terms/
 ├── wireless-mic-recorder/
 │   ├── index.html                # Standalone Privacy Policy for /wireless-mic-recorder/
 │   └── terms/index.html          # Standalone Terms of Service for /wireless-mic-recorder/terms/

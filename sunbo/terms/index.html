@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service — Sunbo — Your 2nd Mind (com.personalai.primary)</title>
+  <meta name="description" content="Terms of Service for Sunbo — Your 2nd Mind (com.personalai.primary) — 100% offline AI voice memory assistant and encrypted Bluetooth recorder for Android.">
+  <style>
+    :root {
+      --bg: #0b0f17;
+      --surface: #121826;
+      --surface-border: #20293d;
+      --card-bg: #171f30;
+      --card-border: #28344e;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --text-subtle: #6b7280;
+      --accent-primary: #f87171;
+      --accent-blue: #60a5fa;
+      --badge-bg: rgba(248, 113, 113, 0.14);
+      --badge-border: rgba(248, 113, 113, 0.38);
+      --badge-text: #f87171;
+      --code-bg: #0d121d;
+      --max-width: 860px;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #fff9f9;
+        --surface: #ffffff;
+        --surface-border: #ece2e2;
+        --card-bg: #f0f4f9;
+        --card-border: #d5dce4;
+        --text-main: #1f1f1f;
+        --text-muted: #444746;
+        --text-subtle: #747775;
+        --accent-primary: #de4a41;
+        --accent-blue: #32628d;
+        --badge-bg: #fdeceb;
+        --badge-border: rgba(222, 74, 65, 0.3);
+        --badge-text: #de4a41;
+        --code-bg: #f0f4f9;
+      }
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.68;
+      padding: 32px 16px 64px 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container { max-width: var(--max-width); margin: 0 auto; }
+
+    header {
+      padding: 24px 0 32px 0;
+      border-bottom: 1px solid var(--surface-border);
+      margin-bottom: 32px;
+    }
+
+    .brand-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      color: var(--badge-text);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+
+    .meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-top: 10px;
+    }
+
+    .meta-bar span strong { color: var(--text-main); }
+
+    .quick-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .quick-nav a {
+      display: inline-flex;
+      align-items: center;
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 12px;
+      transition: all 0.15s ease;
+    }
+
+    .quick-nav a:hover {
+      border-color: var(--accent-primary);
+      color: var(--accent-primary);
+      transform: translateY(-1px);
+    }
+
+    .highlight-card {
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      border-left: 4px solid var(--accent-primary);
+      border-radius: 14px;
+      padding: 20px 24px;
+      margin: 28px 0;
+    }
+
+    .highlight-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--accent-primary);
+      margin: 0 0 8px 0;
+    }
+
+    .highlight-card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0; }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      margin: 40px 0 14px 0;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--surface-border);
+      color: var(--text-main);
+      scroll-margin-top: 24px;
+    }
+
+    p { margin-bottom: 14px; color: var(--text-muted); font-size: 0.98rem; }
+    ul { margin: 10px 0 18px 22px; color: var(--text-muted); font-size: 0.98rem; }
+    li { margin-bottom: 8px; }
+    li strong { color: var(--text-main); }
+
+    a { color: var(--accent-blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.88em;
+      background: var(--code-bg);
+      border: 1px solid var(--surface-border);
+      padding: 2px 6px;
+      border-radius: 6px;
+      color: var(--accent-blue);
+    }
+
+    footer {
+      margin-top: 56px;
+      padding-top: 24px;
+      border-top: 1px solid var(--surface-border);
+      font-size: 0.88rem;
+      color: var(--text-subtle);
+      text-align: center;
+    }
+
+    footer a { color: var(--accent-primary); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="brand-eyebrow">Sunbo — Your 2nd Mind &bull; com.personalai.primary</div>
+      <h1>Sunbo — Your 2nd Mind Terms of Service</h1>
+      <p style="font-size: 1.05rem; color: var(--text-muted);">
+        By downloading, installing, or using <strong>Sunbo — Your 2nd Mind</strong> (<code>com.personalai.primary</code>), in either Primary Mode or Secondary Mode, you agree to these Terms of Service and our <a href="../">Privacy Policy</a>. If you do not agree, do not install or use the app.
+      </p>
+      <div class="meta-bar">
+        <span><strong>Package ID:</strong> <code>com.personalai.primary</code></span>
+        <span><strong>Effective Date:</strong> November 28, 2026</span>
+        <span><strong>Last Updated:</strong> November 28, 2026</span>
+        <span><strong>Governing Law:</strong> India</span>
+        <span><strong>Developer:</strong> Kumod Yadav</span>
+      </div>
+
+      <nav class="quick-nav" aria-label="Jump to section">
+        <a href="#license">1. License</a>
+        <a href="#modes-models">2. Modes &amp; Models</a>
+        <a href="#consent">3. Recording Consent</a>
+        <a href="#ai-accuracy">4. AI &amp; ASR Accuracy</a>
+        <a href="#storage-backups">5. Local Storage &amp; Backups</a>
+        <a href="#warranty">7. Warranty &amp; Liability</a>
+        <a href="#ip">9. Ownership &amp; IP</a>
+        <a href="#contact">11. Contact</a>
+        <a href="../">&larr; Privacy Policy</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="highlight-card">
+        <h3>Plain-Language Summary</h3>
+        <p>
+          Sunbo is a free, ad-free, 100% offline personal AI memory and voice recording app. You retain 100% ownership of all audio, transcripts, memories, and notes you create. You are solely responsible for obtaining legally required recording consent from all participants, verifying AI-generated transcripts and answers, complying with third-party AI model licenses (such as Gemma), and backing up exported files. The app is provided "as is."
+        </p>
+      </div>
+
+      <section id="license">
+        <h2>1. License to Use</h2>
+        <p>
+          We grant you a limited, personal, non-exclusive, non-transferable, revocable, royalty-free license to install and use <strong>Sunbo — Your 2nd Mind</strong> (<code>com.personalai.primary</code>) on compatible Android devices (Android 10 / API 29 and higher) for lawful personal or professional productivity in accordance with these Terms and Google Play policies.
+        </p>
+        <p>
+          You agree not to misuse the app for unlawful surveillance, malware distribution, bypassing Android OS security boundaries or recording indicators, or unauthorized reverse engineering, decompilation, or redistribution except to the extent permitted by applicable law.
+        </p>
+      </section>
+
+      <section id="modes-models">
+        <h2>2. Unified Dual-Mode Operation &amp; Third-Party AI Models</h2>
+        <ul>
+          <li><strong>Unified Single App:</strong> One installation covers both <strong>Primary Mode</strong> (AI voice memory vault, cited Q&amp;A, tasks, insights, and BLE receiver) and <strong>Secondary Mode</strong> (hands-free Silero VAD encrypted voice recorder companion) with reversible in-app role switching.</li>
+          <li><strong>Optional Companion &amp; Local Backends:</strong> Full on-device Gemma 4 LLM, Direct Gemma 4 Multimodal ASR, Whisper, and Cactus Hinglish features integrate over localhost loopback (<code>127.0.0.1:8765</code>) with the optional companion app <strong>Universal Offline AI Provider</strong> (<code>com.uoai.provider</code>) or a user-configured local loopback Whisper server. Built-in Android Offline Speech Recognition and an offline rule engine are also supported.</li>
+          <li><strong>Third-Party Model Weights &amp; Licenses:</strong> When you use or download third-party open-weight models or speech engines (such as Google Gemma 4, Whisper, Cactus, or Silero VAD), your use of those models is governed by the respective model provider's license (for example, the <em>Gemma Terms of Use</em>). You are solely responsible for reviewing and complying with applicable model licenses.</li>
+        </ul>
+      </section>
+
+      <section id="consent">
+        <h2>3. User Responsibilities &amp; Mandatory Recording Consent</h2>
+        <p>
+          You are solely responsible for all conversations, meetings, lectures, and voice notes recorded, transmitted, transcribed, indexed, or exported using Sunbo. You agree that you will:
+        </p>
+        <ul>
+          <li><strong>Obtain Legal Consent:</strong> Inform and obtain all legally required consent from every individual whose voice you record, in full compliance with applicable local, state, national, and international wiretapping, eavesdropping, privacy, workplace, and recording laws (including all-party consent jurisdictions).</li>
+          <li><strong>Respect Transparency Indicators:</strong> Never attempt to conceal, suppress, or bypass Sunbo's persistent recording notification or Android's system microphone indicator.</li>
+          <li><strong>Honor Confidentiality &amp; Rights:</strong> Respect non-disclosure agreements (NDAs), trade secrets, medical/legal confidentiality obligations, and third-party intellectual property rights when recording or transcribing content.</li>
+        </ul>
+      </section>
+
+      <section id="ai-accuracy">
+        <h2>4. AI Transcription, Memory Extraction &amp; Citation Disclaimer</h2>
+        <p>
+          On-device Automatic Speech Recognition (Gemma 4 Multimodal, Whisper, Cactus, Android Speech) and Large Language Model inference are probabilistic systems that may mishear speech (especially in noisy environments or across multilingual English, Hindi, and Hinglish idioms), miss deadlines, misattribute context, or produce inaccurate summaries or answers:
+        </p>
+        <ul>
+          <li><strong>Verify Before Relying:</strong> Although <strong>Ask Sunbo</strong> includes clickable transcript citations (<code>[S1]</code>) and is designed to refuse unsupported answers, you are solely responsible for verifying all transcripts, extracted memories, commitments, tasks, deadlines, insights, and Q&amp;A outputs before acting on or sharing them.</li>
+          <li><strong>Not Professional or Legal Record Advice:</strong> Sunbo's outputs do <strong>not</strong> constitute legal, medical, financial, tax, compliance, or safety-critical advice, and should not be relied upon as an official verbatim legal transcript without independent human verification.</li>
+        </ul>
+      </section>
+
+      <section id="storage-backups">
+        <h2>5. Local Storage, Smart Audio Auto-Deletion &amp; Backups</h2>
+        <ul>
+          <li><strong>100% On-Device Storage:</strong> All encrypted audio clips, transcripts, memories, tasks, and pairing keys remain exclusively on your devices with cloud backup disabled (<code>allowBackup="false"</code>). Because we hold no cloud copies of your data, we cannot recover deleted files.</li>
+          <li><strong>Smart Audio Auto-Deletion:</strong> If you enable automatic audio pruning (<em>After ASR</em>, hourly <code>1h / 6h / 12h</code>, or daily <code>1d&ndash;7d</code>), verified local WAV files are permanently deleted on schedule while transcripts and memories remain.</li>
+          <li><strong>Your Backup Responsibility:</strong> You are solely responsible for exporting important audio clips (for example, to <code>Downloads/Sunbo/</code>) and maintaining independent backups. We are not liable for lost recordings, transcripts, or tasks resulting from auto-deletion settings you select, manual wipes, device failure, low storage, battery depletion, OS termination, or app uninstallation.</li>
+        </ul>
+      </section>
+
+      <section id="hardware">
+        <h2>6. Device Hardware, Bluetooth &amp; OS Constraints</h2>
+        <p>
+          On-device AI inference, speech transcription, Silero VAD capture, and peer-to-peer Bluetooth L2CAP CoC synchronization depend on your devices' CPU/GPU/NPU performance, available RAM, storage space, Bluetooth radio quality, physical proximity, battery optimization settings, and Android OS background lifecycle policies. We do not guarantee uninterrupted capture, instantaneous transfer, or support for all model sizes on every Android device.
+        </p>
+      </section>
+
+      <section id="warranty">
+        <h2>7. Disclaimer of Warranties</h2>
+        <p>
+          SUNBO — YOUR 2ND MIND IS PROVIDED ON AN <strong>"AS IS"</strong> AND <strong>"AS AVAILABLE"</strong> BASIS WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, ACCURACY, RELIABILITY, OR NON-INFRINGEMENT.
+        </p>
+
+        <h2>8. Limitation of Liability</h2>
+        <p>
+          TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, <strong>KUMOD YADAV</strong> SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES, OR ANY LOSS OF DATA, RECORDINGS, TRANSCRIPTS, PROFITS, GOODWILL, OR BUSINESS INTERRUPTION ARISING OUT OF OR RELATED TO YOUR USE OF OR INABILITY TO USE THE APP, ITS RECORDING OR SYNC FEATURES, OR ANY AI-GENERATED OUTPUTS.
+        </p>
+      </section>
+
+      <section id="ip">
+        <h2>9. Intellectual Property &amp; Your Content Ownership</h2>
+        <p>
+          All application source code, user interface designs, graphics, logos, icons, and branding associated with <strong>Sunbo — Your 2nd Mind</strong> remain the intellectual property of <strong>Kumod Yadav</strong> (excluding third-party open-source libraries and third-party AI model weights governed by their respective licenses).
+        </p>
+        <p>
+          You retain <strong>100% ownership</strong> of all original voice recordings, transcripts, notes, memories, tasks, and exported files you create using Sunbo. We claim no license or rights over your personal data.
+        </p>
+      </section>
+
+      <section id="law">
+        <h2>10. Changes to Terms &amp; Governing Law</h2>
+        <p>
+          We may update these Terms of Service from time to time. Revised Terms will be posted at this URL with an updated Effective / Last Updated date, and continued use of the app after updates take effect constitutes acceptance of the revised Terms. These Terms are governed by and construed in accordance with the laws of <strong>India</strong>, without regard to conflict-of-law principles.
+        </p>
+      </section>
+
+      <section id="contact">
+        <h2>11. Contact Us</h2>
+        <p>For support, legal inquiries, or questions regarding these Terms of Service, contact:</p>
+        <ul>
+          <li><strong>Developer:</strong> Kumod Yadav</li>
+          <li><strong>App:</strong> Sunbo — Your 2nd Mind (<code>com.personalai.primary</code>)</li>
+          <li><strong>Email:</strong> <a href="mailto:kumod353@gmail.com">kumod353@gmail.com</a></li>
+          <li><strong>Privacy Policy:</strong> <a href="https://kumodd.github.io/privacy-policy/sunbo/">https://kumodd.github.io/privacy-policy/sunbo/</a></li>
+          <li><strong>Repository:</strong> <a href="https://github.com/kumodd/privacy-policy" target="_blank" rel="noopener noreferrer">github.com/kumodd/privacy-policy</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Kumod Yadav &mdash; Sunbo — Your 2nd Mind. All rights reserved.</p>
+      <p style="margin-top: 6px;"><a href="../">Privacy Policy</a></p>
+    </footer>
+  </div>
+
+</body>
+</html>

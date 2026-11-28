@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Sunbo — Your 2nd Mind (com.personalai.primary)</title>
+  <meta name="description" content="Privacy Policy for Sunbo — Your 2nd Mind (com.personalai.primary) — 100% offline AI voice memory assistant and encrypted Bluetooth hands-free recorder for Android.">
+  <style>
+    :root {
+      --bg: #0b0f17;
+      --surface: #121826;
+      --surface-border: #20293d;
+      --card-bg: #171f30;
+      --card-border: #28344e;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --text-subtle: #6b7280;
+      --accent-primary: #f87171;
+      --accent-blue: #60a5fa;
+      --accent-emerald: #34d399;
+      --badge-bg: rgba(248, 113, 113, 0.14);
+      --badge-border: rgba(248, 113, 113, 0.38);
+      --badge-text: #f87171;
+      --code-bg: #0d121d;
+      --table-border: #263147;
+      --max-width: 860px;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #fff9f9;
+        --surface: #ffffff;
+        --surface-border: #ece2e2;
+        --card-bg: #f0f4f9;
+        --card-border: #d5dce4;
+        --text-main: #1f1f1f;
+        --text-muted: #444746;
+        --text-subtle: #747775;
+        --accent-primary: #de4a41;
+        --accent-blue: #32628d;
+        --accent-emerald: #1e8e3e;
+        --badge-bg: #fdeceb;
+        --badge-border: rgba(222, 74, 65, 0.3);
+        --badge-text: #de4a41;
+        --code-bg: #f0f4f9;
+        --table-border: #e2e8f0;
+      }
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.68;
+      padding: 32px 16px 64px 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container { max-width: var(--max-width); margin: 0 auto; }
+
+    header {
+      padding: 24px 0 32px 0;
+      border-bottom: 1px solid var(--surface-border);
+      margin-bottom: 32px;
+    }
+
+    .brand-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      color: var(--badge-text);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+
+    .meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-top: 10px;
+    }
+
+    .meta-bar span strong { color: var(--text-main); }
+
+    .quick-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .quick-nav a {
+      display: inline-flex;
+      align-items: center;
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 12px;
+      transition: all 0.15s ease;
+    }
+
+    .quick-nav a:hover {
+      border-color: var(--accent-primary);
+      color: var(--accent-primary);
+      transform: translateY(-1px);
+    }
+
+    .highlight-card {
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      border-left: 4px solid var(--accent-primary);
+      border-radius: 14px;
+      padding: 20px 24px;
+      margin: 28px 0;
+    }
+
+    .highlight-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--accent-primary);
+      margin: 0 0 8px 0;
+    }
+
+    .highlight-card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0; }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      margin: 42px 0 14px 0;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--surface-border);
+      color: var(--text-main);
+      scroll-margin-top: 24px;
+    }
+
+    h3 { font-size: 1.15rem; font-weight: 600; margin: 22px 0 10px 0; color: var(--text-main); }
+
+    p { margin-bottom: 14px; color: var(--text-muted); font-size: 0.98rem; }
+    ul, ol { margin: 10px 0 18px 22px; color: var(--text-muted); font-size: 0.98rem; }
+    li { margin-bottom: 8px; }
+    li strong { color: var(--text-main); }
+
+    a { color: var(--accent-blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.88em;
+      background: var(--code-bg);
+      border: 1px solid var(--surface-border);
+      padding: 2px 6px;
+      border-radius: 6px;
+      color: var(--accent-blue);
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 18px 0 24px 0;
+      border: 1px solid var(--table-border);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.92rem;
+    }
+
+    th {
+      background: var(--card-bg);
+      color: var(--text-main);
+      font-weight: 600;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--table-border);
+    }
+
+    td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--table-border);
+      color: var(--text-muted);
+      vertical-align: top;
+    }
+
+    tr:last-child td { border-bottom: none; }
+    td strong { color: var(--text-main); }
+
+    footer {
+      margin-top: 56px;
+      padding-top: 24px;
+      border-top: 1px solid var(--surface-border);
+      font-size: 0.88rem;
+      color: var(--text-subtle);
+      text-align: center;
+    }
+
+    footer a { color: var(--accent-primary); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="brand-eyebrow">Sunbo — Your 2nd Mind &bull; com.personalai.primary</div>
+      <h1>Sunbo — Your 2nd Mind Privacy Policy</h1>
+      <p style="font-size: 1.05rem; color: var(--text-muted);">
+        <strong>Kumod Yadav</strong> built <strong>Sunbo — Your 2nd Mind</strong> (<code>com.personalai.primary</code>) as a 100% offline, privacy-first personal AI voice memory assistant and encrypted Bluetooth hands-free recorder companion. This Privacy Policy explains how information is handled across both Primary Mode and Secondary Mode.
+      </p>
+      <div class="meta-bar">
+        <span><strong>Package ID:</strong> <code>com.personalai.primary</code></span>
+        <span><strong>Version:</strong> 1.1.0 (Android 10+ / API 29&ndash;36)</span>
+        <span><strong>Effective Date:</strong> November 28, 2026</span>
+        <span><strong>Last Updated:</strong> November 28, 2026</span>
+        <span><strong>Developer:</strong> Kumod Yadav</span>
+      </div>
+
+      <nav class="quick-nav" aria-label="Jump to section">
+        <a href="#no-collection">1. Zero Data Collection</a>
+        <a href="#dual-mode">2. Dual-Mode Offline AI</a>
+        <a href="#security">3. Encryption &amp; Loopback</a>
+        <a href="#permissions">4. Permissions</a>
+        <a href="#data-safety">5. Play Data Safety</a>
+        <a href="#storage-deletion">6. Storage &amp; Deletion</a>
+        <a href="#consent">7. Recording Consent</a>
+        <a href="#contact">10. Contact</a>
+        <a href="./terms/">Terms of Service &rarr;</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="highlight-card">
+        <h3>100% Offline &bull; Zero Cloud Servers &bull; Zero Ads &bull; Zero Tracking &bull; AES-256-GCM Encrypted</h3>
+        <p>
+          <strong>Sunbo — Your 2nd Mind</strong> is built on a strict local-only architecture: <strong>your voice recordings, transcripts, extracted memories, tasks, citations, and AI queries never leave your own Android hardware</strong>. Sunbo requires no user account, no cloud subscription, and no API keys; operates zero remote backend servers; and bundles zero advertising (<code>AD_ID</code>), analytics, or crash-reporting telemetry SDKs.
+        </p>
+      </div>
+
+      <section id="no-collection">
+        <h2>1. Zero Personal Data Collection or Cloud Sharing</h2>
+        <p>
+          We do <strong>not</strong> collect, store, sell, rent, profile, or transmit any personal information, audio recordings, transcripts, memories, tasks, contacts, location data, device identifiers, or usage analytics to our servers or any third party.
+        </p>
+        <ul>
+          <li><strong>No Accounts or Cloud Subscriptions:</strong> Sunbo works completely offline without login, registration, cloud sync accounts, or third-party AI API keys.</li>
+          <li><strong>Zero Advertising &amp; Telemetry SDKs:</strong> The app is free and ad-free, and includes no advertising SDKs, no Google Analytics, no Firebase Analytics, no Crashlytics, and no third-party tracking libraries.</li>
+          <li><strong>No Cloud Backups:</strong> Android cloud backup is explicitly disabled in the application manifest (<code>android:allowBackup="false"</code>) so private audio files, transcripts, memories, and pairing keys are never uploaded to cloud backup services.</li>
+        </ul>
+      </section>
+
+      <section id="dual-mode">
+        <h2>2. Unified Dual-Mode Architecture &amp; On-Device Processing</h2>
+        <p>
+          One unified app (<code>com.personalai.primary</code>) supports two reversible modes on your own Android devices, with safe in-app role switching that never uploads data to external servers:
+        </p>
+
+        <h3>Primary Mode (Sunbo — Your 2nd Mind)</h3>
+        <ul>
+          <li><strong>Encrypted Bluetooth Reception:</strong> Receives encrypted speech segments over peer-to-peer Bluetooth Low Energy (BLE GATT / L2CAP CoC) directly from your own paired Secondary device, and also supports manual quick notes via <strong>+ Capture</strong>.</li>
+          <li><strong>100% On-Device Speech Transcription (ASR):</strong> Transcribes English, Hindi, Hinglish, and multilingual speech strictly on-device using your selected local backend: Direct <strong>Gemma 4 Multimodal ASR</strong>, on-device <strong>Whisper</strong> (<code>whisper.cpp</code>), or on-device Hinglish <strong>Cactus</strong> via the optional local companion <strong>Universal Offline AI Provider</strong> (<code>com.uoai.provider</code>); a user-configured local loopback Whisper server (<code>127.0.0.1</code> / <code>localhost</code> only); or built-in <strong>Android Offline Speech Recognition</strong>.</li>
+          <li><strong>Local Memory Vault, Tasks &amp; Cited Q&amp;A:</strong> Organizes transcripts into 13 structured categories (Decisions, Commitments, Tasks, Deadlines, Ideas, Facts, Projects, Follow-Ups, and more), builds local semantic search indexes, calculates 7-day Insights &amp; Digests, and streams grounded <strong>Ask Sunbo</strong> Q&amp;A responses with clickable transcript citations (<code>[S1]</code>) entirely on your phone. A built-in zero-network rule engine is also included when no external local LLM provider is installed.</li>
+        </ul>
+
+        <h3>Secondary Mode (Hands-Free Encrypted Recorder Companion)</h3>
+        <ul>
+          <li><strong>Silero VAD On-Device Speech Capture:</strong> Turns a spare Android phone or tablet (no SIM card or Wi-Fi required) into a dedicated voice recorder that runs on-device Silero Voice Activity Detection (VAD) to skip silence and capture speech segments.</li>
+          <li><strong>Explicit Foreground Start &amp; Visible Indicators:</strong> Recording starts <strong>strictly</strong> from an explicit foreground tap by you and always displays a persistent system notification with live recording state and an immediate <strong>Stop</strong> button alongside Android's system microphone indicator.</li>
+          <li><strong>Privacy Kill-Switch &amp; Safe Reboot Behavior:</strong> An instant in-app <strong>Privacy Kill-Switch</strong> forces the recorder to <code>DISABLED</code> and blocks arming or remote capture controls. After a device reboot or app update, the microphone always stays <strong>OFF</strong> until you explicitly open the app and arm capture.</li>
+        </ul>
+      </section>
+
+      <section id="security">
+        <h2>3. Hardware-Grade Encryption, Pairing &amp; Loopback Security</h2>
+        <ul>
+          <li><strong>Mutual ECDH P-256 + 6-Digit SAS Pairing:</strong> Primary and Secondary devices authenticate using Elliptic Curve Diffie-Hellman (ECDH P-256) key exchange verified by a mutual 6-digit Short Authentication String (SAS) and Android Bluetooth bonding.</li>
+          <li><strong>End-to-End Encrypted Bluetooth Transfer:</strong> Every BLE L2CAP CoC audio chunk transmitted between your paired devices is encrypted in transit with <strong>AES-256-GCM</strong> using ephemeral ECDH session keys and verified with <strong>SHA-256</strong> checksums before acknowledgement (ACK).</li>
+          <li><strong>Hardware-Backed Local Encryption at Rest:</strong> Captured WAV segments and pairing credentials are protected using <strong>AES-256-GCM</strong> keys managed by the hardware-backed <strong>Android Keystore</strong>.</li>
+          <li><strong>Loopback-Only Network Lock:</strong> The <code>INTERNET</code> permission is restricted by <code>network_security_config.xml</code> and an in-app host allowlist (which throws a <code>SecurityException</code> for any cloud or LAN host) strictly to <code>127.0.0.1</code> and <code>localhost</code> for local IPC with <code>com.uoai.provider</code> (<code>127.0.0.1:8765</code>) or a local loopback Whisper service. No packets ever leave your device over the internet.</li>
+        </ul>
+      </section>
+
+      <section id="permissions">
+        <h2>4. Device Permissions &amp; Foreground Service Justifications</h2>
+        <p>
+          Sunbo requests only the Android permissions strictly necessary for local voice capture, encrypted peer-to-peer Bluetooth sync, local reminders, and localhost on-device AI IPC:
+        </p>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Android Permission / Service</th>
+                <th>Mode &amp; Purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>RECORD_AUDIO</code><br><code>FOREGROUND_SERVICE</code><br><code>FOREGROUND_SERVICE_MICROPHONE</code></td>
+                <td><strong>Secondary Mode (<code>RecorderService</code> — <code>microphone</code>):</strong> User-initiated continuous Silero VAD speech capture for personal voice archiving. Started strictly from an explicit foreground tap; always displays a persistent notification with live state and an immediate <strong>Stop</strong> action.</td>
+              </tr>
+              <tr>
+                <td><code>FOREGROUND_SERVICE_CONNECTED_DEVICE</code></td>
+                <td><strong>Primary &amp; Secondary Modes (<code>PrimarySyncService</code> &amp; <code>BlePeripheralService</code> — <code>connectedDevice</code>):</strong> Maintains reliable encrypted BLE GATT/L2CAP communication between your SAS-paired Primary and Secondary Android phones for live audio sync and authorized standby controls.</td>
+              </tr>
+              <tr>
+                <td><code>BLUETOOTH_SCAN</code> (<code>neverForLocation</code>)<br><code>BLUETOOTH_CONNECT</code><br><code>BLUETOOTH_ADVERTISE</code><br><em>(Legacy <code>BLUETOOTH</code>, <code>BLUETOOTH_ADMIN</code>, <code>ACCESS_FINE_LOCATION</code> strictly <code>maxSdkVersion="30"</code> on Android 10&ndash;11)</em></td>
+                <td><strong>Peer-to-Peer Device Pairing &amp; Sync:</strong> Used strictly to discover, ECDH-pair, and sync encrypted speech segments between your own Android devices. Location data is <strong>never</strong> collected, derived, stored, or transmitted.</td>
+              </tr>
+              <tr>
+                <td><code>POST_NOTIFICATIONS</code></td>
+                <td><strong>Transparency &amp; Reminders:</strong> Displays active foreground service notifications (microphone capture and Bluetooth sync status), reboot/interruption alerts, and local on-device task and deadline reminders.</td>
+              </tr>
+              <tr>
+                <td><code>INTERNET</code></td>
+                <td><strong>Loopback-Only Local AI IPC:</strong> Strictly restricted via <code>network_security_config.xml</code> and host allowlist to <code>127.0.0.1</code> / <code>localhost</code> to communicate with local <strong>Universal Offline AI Provider</strong> (<code>com.uoai.provider</code> on <code>127.0.0.1:8765</code>) or a local loopback Whisper server. Zero external internet requests are made.</td>
+              </tr>
+              <tr>
+                <td><code>WAKE_LOCK</code><br><code>REQUEST_IGNORE_BATTERY_OPTIMIZATIONS</code></td>
+                <td><strong>Secondary Mode Capture &amp; Sync Reliability:</strong> Optional user-approved reliability controls to prevent premature OS interruption during active user-initiated recording or encrypted BLE transfer (no hidden OS bypasses).</td>
+              </tr>
+              <tr>
+                <td><code>RECEIVE_BOOT_COMPLETED</code></td>
+                <td><strong>Post-Reboot State Reconciliation (<code>BootCheckReceiver</code>):</strong> Safely reconciles interrupted session records and pending sync queue items after a reboot or app update and posts a status alert. <strong>Never</strong> starts background microphone recording automatically.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          <strong>Manifest Package Visibility (<code>&lt;queries&gt;</code>):</strong> Sunbo queries only for the optional local companion package <code>com.uoai.provider</code> (Universal Offline AI Provider) and Android's built-in <code>android.speech.RecognitionService</code> to determine which local ASR/LLM engines are installed on your device.
+        </p>
+      </section>
+
+      <section id="data-safety">
+        <h2>5. Google Play Data Safety Compliance</h2>
+        <p>Declarations aligned with the Google Play Console Data Safety form for <code>com.personalai.primary</code>:</p>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Play Console Question</th>
+                <th>Declared Answer</th>
+                <th>Explanation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Does your app collect or share any user data types?</td>
+                <td><strong>No</strong></td>
+                <td>Zero audio, transcripts, memories, tasks, identifiers, or telemetry are collected by or shared with the developer or third parties.</td>
+              </tr>
+              <tr>
+                <td>Is all data encrypted in transit?</td>
+                <td><strong>Yes</strong></td>
+                <td>Peer-to-peer BLE L2CAP CoC frames are encrypted with AES-256-GCM ephemeral ECDH session keys; local AI loopback (<code>127.0.0.1:8765</code>) never leaves the device.</td>
+              </tr>
+              <tr>
+                <td>Can users request data deletion?</td>
+                <td><strong>Yes (Instant On-Device Control)</strong></td>
+                <td>Built-in one-tap <strong>Delete All Local Audio, Transcripts &amp; Memories</strong>, per-clip WAV deletion, and automatic post-ASR / hourly / daily audio pruning.</td>
+              </tr>
+              <tr>
+                <td>Does the app contain ads?</td>
+                <td><strong>No</strong></td>
+                <td>Free, ad-free, no <code>AD_ID</code>, no cloud subscriptions, and zero API keys.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="storage-deletion">
+        <h2>6. Local Storage, Smart Audio Auto-Deletion &amp; User Controls</h2>
+        <p>All app data is stored exclusively inside Sunbo's private on-device storage sandbox (<code>allowBackup="false"</code>):</p>
+        <ul>
+          <li><strong>Encrypted Audio Segments:</strong> Captured and synced speech WAV clips stored locally with Android Keystore AES-256-GCM encryption.</li>
+          <li><strong>Local Memory Database:</strong> Transcripts, structured memories (13 categories), tasks, reminders, entities, daily/weekly summaries, local semantic embeddings, and Ask Sunbo Q&amp;A history stored in an on-device Room SQLite database.</li>
+          <li><strong>Preferences &amp; Pairing Credentials:</strong> App mode, ASR/LLM settings, retention policy, and Keystore-protected ECDH peer credentials stored locally via Jetpack DataStore and Android Keystore.</li>
+          <li><strong>Smart Audio Auto-Deletion:</strong> You can automatically reclaim storage by configuring verified WAV deletion <strong>After ASR</strong>, after <strong>1h / 6h / 12h</strong>, or after <strong>1 / 3 / 5 / 7 days</strong> (or <strong>Keep All</strong>), while preserving 100% of transcripts, memories, and tasks on-device. Pending or failed clips are never auto-deleted.</li>
+          <li><strong>User-Initiated Exports:</strong> WAV files are written to public <code>Downloads/Sunbo/</code> <strong>only</strong> when you explicitly tap Export on a clip.</li>
+        </ul>
+
+        <h3>How to Delete Your Data</h3>
+        <ol>
+          <li><strong>Per-Item Deletion:</strong> Delete individual audio clips, transcripts, memories, or tasks directly inside Sunbo.</li>
+          <li><strong>One-Tap Full Wipe:</strong> Tap <strong>Delete All Local Audio, Transcripts &amp; Memories</strong> in Settings to erase all local recordings, transcripts, memories, embeddings, tasks, digests, and Q&amp;A history.</li>
+          <li><strong>Unpair Devices &amp; Kill-Switch:</strong> Forget paired devices in Settings to purge stored ECDH keys, or toggle the Secondary Mode <strong>Privacy Kill-Switch</strong> at any time.</li>
+          <li><strong>Optional Companion Revocation:</strong> If connected to <strong>Universal Offline AI Provider</strong> (<code>com.uoai.provider</code>), you can revoke Sunbo's local loopback token anytime inside UOAI Provider (see the <a href="../uoai-provider/">UOAI Provider Privacy Policy</a>).</li>
+          <li><strong>Android System Wipe / Uninstall:</strong> Use <strong>Android Settings &rarr; Apps &rarr; Sunbo &rarr; Storage &rarr; Clear Storage</strong> or uninstall the app to permanently remove all private app data and Keystore keys. Any clips you manually exported to <code>Downloads/Sunbo/</code> remain in your device's Downloads folder until you delete them.</li>
+        </ol>
+      </section>
+
+      <section id="consent">
+        <h2>7. Recording Transparency &amp; Participant Consent</h2>
+        <p>
+          Sunbo is designed for transparent, consent-first personal voice archiving. Whenever Secondary Mode captures audio, Android displays both Sunbo's persistent recording notification (with an instant <strong>Stop</strong> control) and the operating system's microphone indicator. You are solely responsible for informing and obtaining consent from all participants in recorded conversations in accordance with applicable local laws.
+        </p>
+      </section>
+
+      <section id="children">
+        <h2>8. Children's Privacy</h2>
+        <p>
+          Sunbo — Your 2nd Mind is rated Everyone / PEGI 3 and does not collect, store, or transmit personal information from any user, including children under the age of 13 (or the equivalent minimum age in your jurisdiction). Because all data stays strictly offline on the user's hardware, the app complies with COPPA and GDPR by architecture.
+        </p>
+      </section>
+
+      <section id="changes">
+        <h2>9. Changes to This Privacy Policy</h2>
+        <p>
+          We may update this Privacy Policy from time to time if app features, permissions, or legal requirements change. Revisions will be posted on this page with an updated Effective / Last Updated date.
+        </p>
+      </section>
+
+      <section id="contact">
+        <h2>10. Contact Us</h2>
+        <p>If you have any questions, privacy inquiries, or feedback regarding Sunbo — Your 2nd Mind, please contact us:</p>
+        <ul>
+          <li><strong>Developer:</strong> Kumod Yadav</li>
+          <li><strong>App:</strong> Sunbo — Your 2nd Mind (<code>com.personalai.primary</code>)</li>
+          <li><strong>Email:</strong> <a href="mailto:kumod353@gmail.com">kumod353@gmail.com</a></li>
+          <li><strong>Website:</strong> <a href="https://kumodd.github.io/privacy-policy/sunbo/">https://kumodd.github.io/privacy-policy/sunbo/</a></li>
+          <li><strong>Repository:</strong> <a href="https://github.com/kumodd/privacy-policy" target="_blank" rel="noopener noreferrer">github.com/kumodd/privacy-policy</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Kumod Yadav &mdash; Sunbo — Your 2nd Mind. All rights reserved.</p>
+      <p style="margin-top: 6px;"><a href="./terms/">Terms of Service</a></p>
+    </footer>
+  </div>
+
+</body>
+</html>
